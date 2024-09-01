@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安居代管 ANJU 登入註冊</title>
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./css/style.min.css">
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" src="./js/NavAndFooter.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function App() {
+            return (
+                <>
+                    <Nav />
+                    <main id="login-page">
+                        <section className="banner">
+                            <figure>
+                                <img src="./images/login/welcome.png" alt="歡迎回來" />
+                            </figure>
+                            <h2>歡迎回來！</h2>
+                            <p>請登入以查看您的物業最新狀況。</p>
+                        </section>
+                        <section className="login-form">
+                            <form action="">
+                                <label for="username">帳號</label>
+                                <input type="text" id="username" name="username" placeholder="請輸入帳號" required />
+                                <label for="password">密碼</label>
+                                <input type="password" id="password" name="password" placeholder="請輸入密碼" required />
+                                <label className="custom-checkbox">
+                                    <input type="checkbox" name="remember-me" />
+                                    <span></span>
+                                    記住我
+                                </label>
+                                <button type="submit">
+                                    <span>登入</span>
+                                </button>
+                            </form>
+                            <p>尚未有帳號？<a href="#">立即加入</a></p>
+                        </section>
+                    </main>
+                    <Footer />
+                </>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+</body>
+
+</html>

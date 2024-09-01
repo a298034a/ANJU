@@ -1,0 +1,416 @@
+@use 'variables' as *;
+@use 'funtion' as *;
+@import 'reset';
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+body {
+    font-family: $font-family-tc;
+    color: map-get($color, concrete-950);
+    letter-spacing: 0.05rem;
+
+    padding-top: 80px;
+    background-color: map-get($color, white);
+}
+
+.low-highlight {
+    text-decoration: underline solid map-get($color, saffron-main) 16px;
+    text-underline-offset: -6px;
+}
+
+#topbar {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 100%;
+    height: 80px;
+    padding: 10px 50px;
+
+    background-color: map-get($color, white);
+
+    .logo {
+        width: 15%;
+        height: 60px;
+        min-width: 150px;
+
+        img {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .menu ul {
+        display: flex;
+        align-items: center;
+        gap: 0 30px;
+
+        li {
+            a {
+                display: block;
+                font-size: map-get($font-size-button, m);
+                font-weight: 500;
+            }
+        }
+
+        li:nth-child(4) a {
+            @include btn-m(map-get($color, saffron-main));
+        }
+
+        li:nth-child(5) a {
+            @include btn-m(map-get($color, carrot-main));
+        }
+    }
+}
+
+#banner-index {
+    display: flex;
+    justify-content: center;
+
+    background: {
+        image: url(../images/index/banner.png);
+        size: cover;
+        position: top right;
+        repeat: no-repeat;
+    }
+
+    .content {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+
+        width: 35%;
+        margin-top: 20%;
+        padding: 0 3.5%;
+
+        &::before {
+            content: "";
+            position: absolute;
+            background-color: map-get($color, white);
+            width: 100%;
+            height: 100%;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .logo {
+            position: relative;
+            z-index: 1;
+
+            width: 85%;
+
+            margin-top: -13%;
+            margin-bottom: 8%;
+        }
+
+        p {
+            position: relative;
+            z-index: 1;
+
+            @include title-m;
+        }
+
+        .btn-container {
+            position: relative;
+            z-index: 1;
+
+            display: flex;
+            justify-content: space-between;
+            gap: 50px;
+
+            margin-top: 13%;
+            margin-bottom: 17%;
+
+            a:first-child {
+                @include btn-l(map-get($color, saffron-main));
+            }
+
+            a:last-child {
+                @include btn-l(map-get($color, carrot-main));
+            }
+        }
+    }
+}
+
+#performance {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 50px 10%;
+    gap: 50px;
+
+    h2 {
+        margin: 0 auto;
+        @include title-xl;
+    }
+
+    ul {
+        display: flex;
+        justify-content: space-between;
+
+        .item {
+            width: 27%;
+
+            figure {
+                padding: 0 55px;
+            }
+
+            h3 {
+                @include title-l;
+                margin-bottom: 10px;
+            }
+        }
+    }
+}
+
+#service {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    h1 {
+        margin: 0 auto;
+        @include title-xl;
+    }
+
+    .item {
+        display: flex;
+        align-items: center;
+
+        background-color: map-get($color, astronaut-main);
+        border-radius: 15px 0 0 15px;
+
+        margin-top: 3%;
+        margin-left: 50px;
+
+        padding: 30px 0 30px 30px;
+
+        .container {
+            display: flex;
+
+            background-color: map-get($color, white);
+            border-radius: 15px 0 0 15px;
+
+            .content {
+                width: 50%;
+
+                margin: auto 5%;
+
+                h2 {
+                    @include title-l;
+                }
+
+                p {
+                    margin: 25px 0;
+                }
+
+                a {
+                    width: fit-content;
+                    @include btn-m(map-get($color, carrot-main));
+                }
+            }
+
+            figure {
+                padding: 30px;
+                margin-right: 8%;
+
+                img {
+                    border-radius: 10px;
+                }
+            }
+        }
+    }
+
+
+    .item:nth-child(odd) {
+        flex-direction: row-reverse;
+
+        background-color: map-get($color, carrot-600);
+        border-radius: 0 15px 15px 0;
+
+        margin-left: 0;
+        margin-right: 50px;
+
+        padding: 30px 30px 30px 0;
+
+        .container {
+            flex-direction: row-reverse;
+            border-radius: 0 15px 15px 0;
+
+            a {
+                @include btn-m(map-get($color, astronaut-main));
+            }
+
+            figure {
+                margin-right: 0;
+                margin-left: 8%;
+            }
+        }
+    }
+
+    .item:last-child {
+        margin-bottom: 3%;
+    }
+}
+
+#login-page {
+    display: flex;
+    height: calc(100vh - 160px);
+
+    .banner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 30%;
+
+        color: map-get($color, white);
+        background-color: map-get($color, astronaut-main);
+
+        figure {
+            width: 50%;
+        }
+
+        h2 {
+            @include title-l;
+        }
+
+        p {
+            margin-top: 10px;
+            font-size: map-get($font-size-content, m);
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            bottom: -80px;
+            width: 100%;
+            height: 80px;
+            background-color: map-get($color, astronaut-main);
+        }
+    }
+
+    .login-form {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        margin: auto;
+
+        form {
+            display: flex;
+            flex-direction: column;
+
+            label[for="username"],
+            label[for="password"] {
+                @include title-m;
+            }
+
+            input[type="text"],
+            input[type="password"] {
+                width: 100%;
+
+                padding: 10px 1px;
+                margin-bottom: 25px;
+
+                border: none;
+                border-bottom: 1px solid map-get($color, concrete-600);
+                border-radius: 0;
+
+                background-color: transparent;
+                outline: none;
+                transition: border-color 0.3s ease;
+            }
+
+            input[type="text"]:focus,
+            input[type="password"]:focus {
+                border-bottom-color: map-get($color, carrot-600);
+            }
+
+            .custom-checkbox {
+                display: flex;
+                align-items: center;
+                margin-bottom: 25px;
+            }
+
+            /* 隱藏默認的 checkbox */
+            .custom-checkbox input[type="checkbox"] {
+                display: none;
+            }
+
+            /* 自訂 checkbox 的外觀 */
+            .custom-checkbox span {
+                width: 20px;
+                height: 20px;
+                border: 2px solid map-get($color, concrete-300);
+                background-color: map-get($color, concrete-100);
+                border-radius: 4px;
+                display: inline-block;
+                position: relative;
+                margin-right: 10px;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: map-get($color, concrete-200);
+                }
+            }
+
+            /* 自訂 checkbox 勾選狀態的樣式 */
+            .custom-checkbox input[type="checkbox"]:checked+span::before {
+                content: '';
+                position: absolute;
+                top: 2px;
+                left: 5px;
+                width: 6px;
+                height: 10px;
+                border: 2px solid map-get($color, concrete-950);
+                border-width: 0 2px 2px 0;
+                transform: rotate(45deg);
+            }
+
+            button {
+                border: none;
+                border-radius: 3px;
+                padding: 8px 0;
+                margin-bottom: 25px;
+                background-color: map-get($color, carrot-main);
+                color: map-get($color, white);
+                cursor: pointer;
+
+                span {
+                    font-size: map-get($font-size-button, m);
+                    font-weight: 600;
+                }
+            }
+        }
+
+        a {
+            display: inline;
+            color: map-get($color, astronaut-500);
+            border-bottom: 1px solid map-get($color, astronaut-500);
+
+            &:hover {
+                color: map-get($color, astronaut-300);
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 80px;
+
+    p {
+        font-size: map-get($font-size-aide, xs);
+    }
+}

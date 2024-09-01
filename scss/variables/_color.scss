@@ -1,0 +1,24 @@
+//顏色規範 map-get($color, )
+$color: (
+    //主色
+    /* 藍色 */
+    astronaut-main:#304173,
+    astronaut-300:#A6C6EA,
+    astronaut-500:#5D89D4,
+    astronaut-800:#384D95,
+
+    /* 橘色 */
+    carrot-main:#F2911B,
+    carrot-600:#D66709,
+
+    /* 黃色 */
+    saffron-main:#F2C438,
+
+    // 灰階
+    white: #FDFDFD,
+    concrete-100:#F2F2F2,
+    concrete-200:#DCDCDC,
+    concrete-300:#BDBDBD,
+    concrete-600:#656565,
+    concrete-950:#292929
+);

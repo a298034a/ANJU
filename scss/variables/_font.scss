@@ -1,0 +1,32 @@
+//字級規範
+//map-get($font-size-title, )
+$font-size-title: (
+    s: 1.125rem,
+    m: 1.3rem,
+    l: 2rem,
+    xl: 2.5rem,
+    xxl: 3rem
+);
+
+//map-get($font-size-content, )
+$font-size-content: (
+    m: 1rem,
+    l: 1.125rem,
+    xl: 1.25rem
+);
+
+//map-get($font-size-aide, )
+$font-size-aide: (
+    xs: 0.75rem,
+    s: 0.875rem,
+);
+
+//map-get($font-size-button, )
+$font-size-button: (
+    m: 1.25rem,
+    l: 1.5rem,
+    xl: 1.75rem
+);
+
+//字體規範
+$font-family-tc: "Noto Sans TC", sans-serif;

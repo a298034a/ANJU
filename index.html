@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安居代管 ANJU</title>
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./css/style.min.css">
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" src="./js/NavAndFooter.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        function PerformItem({ img, alt, title, content }) {
+            return (
+                <li className="item">
+                    <figure>
+                        <img src={img} alt={alt} />
+                    </figure>
+                    <h3>{title}</h3>
+                    <p>{content}</p>
+                </li>
+            )
+        }
+
+        function ServiceItem({ number, imgData, textData, linkData }) {
+            return (
+                <li className="item">
+                    <figure>
+                        <img src={number.src} alt={number.alt} />
+                    </figure>
+                    <div className="container">
+                        <div className="content">
+                            <h2 className="low-highlight">{textData.title}</h2>
+                            <p>{textData.content}</p>
+                            <a href={linkData.href}>{linkData.text}</a>
+                        </div>
+                        <figure>
+                            <img src={imgData.src} alt={imgData.alt} />
+                        </figure>
+                    </div>
+                </li>
+            );
+        }
+
+        function App() {
+            return (
+                <>
+                    <Nav />
+                    <main>
+                        <section id="banner-index">
+                            <div className="content">
+                                <figure className="logo">
+                                    <img src="./images/index/logo-text.png" alt="安居代管" />
+                                </figure>
+                                <p>致力於提供全面的房產管理服務，確保每一位房東和租客享受到無憂的居住經驗。選擇安居代管，開始您輕鬆管理的生活。</p>
+                                <div className="btn-container">
+                                    <a href="./login.html">登入註冊</a>
+                                    <a href="#">免費諮詢</a>
+                                </div>
+                            </div>
+                        </section>
+                        <section id="performance">
+                            <h2 className="low-highlight">實力見證，值得您的信賴</h2>
+                            <ul>
+                                <PerformItem img="./images/index/experience.png" alt="代管經驗圖表" title="15 年代管經驗" content="深耕房產管理行業超過15年，我們憑藉豐富的經驗和專業知識，為房東提供無憂的全方位代管服務。從法律諮詢到物業維護，安居代管是您可信賴的房產伙伴。" />
+                                <PerformItem img="./images/index/having-fun.png" alt="滿租率高" title="96% 滿租率" content="在競爭激烈的房產市場中，我們自豪地保持高達96%的滿租率。這不僅證明了我們的房源吸引力，也反映了我們的市場洞察能力，確保每個物業都能發揮最大價值。" />
+                                <PerformItem img="./images/index/business-deal.png" alt="續約率高" title="95%  續約率" content="擁有高達95%的續約率，我們的服務贏得了租客的持續信任和滿意。我們致力於提升租住體驗，確保每位租客都能感受到家的舒適和安心。" />
+                            </ul>
+                        </section>
+                        <section id="service">
+                            <h1 className="low-highlight">安居的三大特色</h1>
+                            <ServiceItem
+                                number={{ src: "./images/index/one.svg", alt: "特色一" }}
+                                imgData={{ src: "./images/index/professional-team.png", alt: "團隊照片" }}
+                                textData={{ title: "專業團隊", content: "選擇安居代管，享受專業團隊帶來的全面管理服務。我們的專家不僅精通市場動態，更熟悉房產法規，確保每位房東的資產最大化和租客的居住滿意度。從租約協商到物業維護，我們讓您的租賃體驗無憂。" }}
+                                linkData={{ href: "#", text: "免費諮詢" }}
+                            />
+                            <ServiceItem
+                                number={{ src: "./images/index/two.svg", alt: "特色二" }}
+                                imgData={{ src: "./images/index/decoration.png", alt: "裝潢照片" }}
+                                textData={{ title: "裝潢改造", content: "安居代管提供專業的裝潢改造服務，專注於成本效益和質量保證，確保每一項投資都能為房東帶來最大回報。我們根據市場趨勢和租客偏好進行設計，不僅提升物業價值，也增強房客的居住體驗。讓您的物業在競爭激烈的租賃市場中脫穎而出。" }}
+                                linkData={{ href: "#", text: "裝潢案例" }}
+                            /><ServiceItem
+                                number={{ src: "./images/index/three.svg", alt: "特色三" }}
+                                imgData={{ src: "./images/index/management-system.png", alt: "後台系統使用照片" }}
+                                textData={{ title: "後台系統", content: "先進後台系統為房東提供實時的出租數據和物業報告，使您能夠輕鬆追蹤租賃狀況和物業狀態。我們的系統確保管理效率和透明度，房客可通過系統迅速報修和查詢帳單，所有交易過程，包括線上簽約，都能在幾分鐘內輕鬆完成。" }}
+                                linkData={{ href: "#", text: "了解更多" }}
+                            />
+                        </section>
+                    </main>
+                    <Footer />
+                </>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+</body>
+
+</html>

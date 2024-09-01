@@ -1,0 +1,45 @@
+@use '../variables/' as *;
+
+@mixin title-m {
+    font-size: map-get($font-size-title, m);
+    font-weight: 500;
+}
+
+@mixin title-l {
+    font-size: map-get($font-size-title, l);
+    font-weight: 500;
+}
+
+@mixin title-xl {
+    font-size: map-get($font-size-title, xl);
+    font-weight: 500;
+}
+
+@mixin title-xxl {
+    font-size: map-get($font-size-title, xxl);
+    font-weight: 500;
+}
+
+@mixin btn-l($bg-color) {
+    font-size: map-get($font-size-button, l);
+    font-weight: 500;
+
+    border-radius: 99px;
+
+    background-color: $bg-color;
+    color: map-get($color, white);
+
+    padding: 8px 24px;
+}
+
+@mixin btn-m($bg-color) {
+    font-size: map-get($font-size-button, m);
+    font-weight: 500;
+
+    border-radius: 99px;
+
+    background-color: $bg-color;
+    color: map-get($color, white);
+
+    padding: 8px 24px;
+}
