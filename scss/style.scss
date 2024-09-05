@@ -226,7 +226,7 @@ body {
     }
 
 
-    .item:nth-child(odd) {
+    .item:nth-child(even) {
         flex-direction: row-reverse;
 
         background-color: map-get($color, carrot-600);

@@ -252,7 +252,7 @@ body {
 #service .item .container figure img {
   border-radius: 10px;
 }
-#service .item:nth-child(odd) {
+#service .item:nth-child(even) {
   flex-direction: row-reverse;
   background-color: #D66709;
   border-radius: 0 15px 15px 0;
@@ -260,11 +260,11 @@ body {
   margin-right: 50px;
   padding: 30px 30px 30px 0;
 }
-#service .item:nth-child(odd) .container {
+#service .item:nth-child(even) .container {
   flex-direction: row-reverse;
   border-radius: 0 15px 15px 0;
 }
-#service .item:nth-child(odd) .container a {
+#service .item:nth-child(even) .container a {
   font-size: 1.25rem;
   font-weight: 500;
   border-radius: 99px;
@@ -272,7 +272,7 @@ body {
   color: #FDFDFD;
   padding: 8px 24px;
 }
-#service .item:nth-child(odd) .container figure {
+#service .item:nth-child(even) .container figure {
   margin-right: 0;
   margin-left: 8%;
 }
