@@ -89,24 +89,76 @@ body {
 }
 #topbar .menu ul li a {
   display: block;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 #topbar .menu ul li:nth-child(4) a {
-  font-size: 1.25rem;
+  position: relative;
+  z-index: 1;
+  font-size: 1.2rem;
   font-weight: 500;
   border-radius: 99px;
-  background-color: #F2C438;
+  background-color: #304173;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
   color: #FDFDFD;
   padding: 8px 24px;
+  overflow: hidden;
+}
+#topbar .menu ul li:nth-child(4) a:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #5D89D4;
+  border-radius: 99px;
+  transition: all 0.3s ease;
+}
+#topbar .menu ul li:nth-child(4) a:hover {
+  color: #fff;
+}
+#topbar .menu ul li:nth-child(4) a:hover:after {
+  left: 0;
+  width: 100%;
+}
+#topbar .menu ul li:nth-child(4) a:active {
+  top: 2px;
 }
 #topbar .menu ul li:nth-child(5) a {
-  font-size: 1.25rem;
+  position: relative;
+  z-index: 1;
+  font-size: 1.2rem;
   font-weight: 500;
   border-radius: 99px;
   background-color: #F2911B;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
   color: #FDFDFD;
   padding: 8px 24px;
+  overflow: hidden;
+}
+#topbar .menu ul li:nth-child(5) a:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #f8ac27;
+  border-radius: 99px;
+  transition: all 0.3s ease;
+}
+#topbar .menu ul li:nth-child(5) a:hover {
+  color: #fff;
+}
+#topbar .menu ul li:nth-child(5) a:hover:after {
+  left: 0;
+  width: 100%;
+}
+#topbar .menu ul li:nth-child(5) a:active {
+  top: 2px;
 }
 
 #banner-index {
@@ -144,7 +196,7 @@ body {
 #banner-index .content p {
   position: relative;
   z-index: 1;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 500;
 }
 #banner-index .content .btn-container {
@@ -157,20 +209,72 @@ body {
   margin-bottom: 17%;
 }
 #banner-index .content .btn-container a:first-child {
+  position: relative;
+  z-index: 1;
   font-size: 1.5rem;
   font-weight: 500;
   border-radius: 99px;
-  background-color: #F2C438;
+  background-color: #304173;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
   color: #FDFDFD;
   padding: 8px 24px;
+  overflow: hidden;
+}
+#banner-index .content .btn-container a:first-child:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #5D89D4;
+  border-radius: 99px;
+  transition: all 0.3s ease;
+}
+#banner-index .content .btn-container a:first-child:hover {
+  color: #fff;
+}
+#banner-index .content .btn-container a:first-child:hover:after {
+  left: 0;
+  width: 100%;
+}
+#banner-index .content .btn-container a:first-child:active {
+  top: 2px;
 }
 #banner-index .content .btn-container a:last-child {
+  position: relative;
+  z-index: 1;
   font-size: 1.5rem;
   font-weight: 500;
   border-radius: 99px;
   background-color: #F2911B;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
   color: #FDFDFD;
   padding: 8px 24px;
+  overflow: hidden;
+}
+#banner-index .content .btn-container a:last-child:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #f8ac27;
+  border-radius: 99px;
+  transition: all 0.3s ease;
+}
+#banner-index .content .btn-container a:last-child:hover {
+  color: #fff;
+}
+#banner-index .content .btn-container a:last-child:hover:after {
+  left: 0;
+  width: 100%;
+}
+#banner-index .content .btn-container a:last-child:active {
+  top: 2px;
 }
 
 #performance {
@@ -238,12 +342,38 @@ body {
 }
 #service .item .container .content a {
   width: fit-content;
-  font-size: 1.25rem;
+  position: relative;
+  z-index: 1;
+  font-size: 1.2rem;
   font-weight: 500;
   border-radius: 99px;
   background-color: #F2911B;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
   color: #FDFDFD;
   padding: 8px 24px;
+  overflow: hidden;
+}
+#service .item .container .content a:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #f9c550;
+  border-radius: 99px;
+  transition: all 0.3s ease;
+}
+#service .item .container .content a:hover {
+  color: #fff;
+}
+#service .item .container .content a:hover:after {
+  left: 0;
+  width: 100%;
+}
+#service .item .container .content a:active {
+  top: 2px;
 }
 #service .item .container figure {
   padding: 30px;
@@ -252,7 +382,7 @@ body {
 #service .item .container figure img {
   border-radius: 10px;
 }
-#service .item:nth-child(odd) {
+#service .item:nth-child(even) {
   flex-direction: row-reverse;
   background-color: #D66709;
   border-radius: 0 15px 15px 0;
@@ -260,19 +390,45 @@ body {
   margin-right: 50px;
   padding: 30px 30px 30px 0;
 }
-#service .item:nth-child(odd) .container {
+#service .item:nth-child(even) .container {
   flex-direction: row-reverse;
   border-radius: 0 15px 15px 0;
 }
-#service .item:nth-child(odd) .container a {
-  font-size: 1.25rem;
+#service .item:nth-child(even) .container a {
+  position: relative;
+  z-index: 1;
+  font-size: 1.2rem;
   font-weight: 500;
   border-radius: 99px;
   background-color: #304173;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
   color: #FDFDFD;
   padding: 8px 24px;
+  overflow: hidden;
 }
-#service .item:nth-child(odd) .container figure {
+#service .item:nth-child(even) .container a:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #5D89D4;
+  border-radius: 99px;
+  transition: all 0.3s ease;
+}
+#service .item:nth-child(even) .container a:hover {
+  color: #fff;
+}
+#service .item:nth-child(even) .container a:hover:after {
+  left: 0;
+  width: 100%;
+}
+#service .item:nth-child(even) .container a:active {
+  top: 2px;
+}
+#service .item:nth-child(even) .container figure {
   margin-right: 0;
   margin-left: 8%;
 }
@@ -329,7 +485,7 @@ body {
 }
 #login-page .login-form form label[for=username],
 #login-page .login-form form label[for=password] {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 500;
 }
 #login-page .login-form form input[type=text],
@@ -391,7 +547,7 @@ body {
   cursor: pointer;
 }
 #login-page .login-form form button span {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
 }
 #login-page .login-form a {

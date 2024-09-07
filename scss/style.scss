@@ -58,11 +58,11 @@ body {
         }
 
         li:nth-child(4) a {
-            @include btn-m(map-get($color, saffron-main));
+            @include btn-m(map-get($color, astronaut-main), map-get($color, astronaut-500));
         }
 
         li:nth-child(5) a {
-            @include btn-m(map-get($color, carrot-main));
+            @include btn-m(map-get($color, carrot-main), map-get($color, carrot-400));
         }
     }
 }
@@ -126,11 +126,11 @@ body {
             margin-bottom: 17%;
 
             a:first-child {
-                @include btn-l(map-get($color, saffron-main));
+                @include btn-l(map-get($color, astronaut-main), map-get($color, astronaut-500));
             }
 
             a:last-child {
-                @include btn-l(map-get($color, carrot-main));
+                @include btn-l(map-get($color, carrot-main), map-get($color, carrot-400));
             }
         }
     }
@@ -210,7 +210,7 @@ body {
 
                 a {
                     width: fit-content;
-                    @include btn-m(map-get($color, carrot-main));
+                    @include btn-m(map-get($color, carrot-main), map-get($color, carrot-300));
                 }
             }
 
@@ -226,7 +226,7 @@ body {
     }
 
 
-    .item:nth-child(odd) {
+    .item:nth-child(even) {
         flex-direction: row-reverse;
 
         background-color: map-get($color, carrot-600);
@@ -242,7 +242,7 @@ body {
             border-radius: 0 15px 15px 0;
 
             a {
-                @include btn-m(map-get($color, astronaut-main));
+                @include btn-m(map-get($color, astronaut-main), map-get($color, astronaut-500));
             }
 
             figure {

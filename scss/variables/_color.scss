@@ -9,6 +9,8 @@ $color: (
 
     /* 橘色 */
     carrot-main:#F2911B,
+    carrot-300:#f9c550,
+    carrot-400:#f8ac27,
     carrot-600:#D66709,
 
     /* 黃色 */
@@ -22,3 +24,5 @@ $color: (
     concrete-600:#656565,
     concrete-950:#292929
 );
+
+$shadow-black-10: 0px 1px 2px 0px rgba(0, 0, 0, 25%)

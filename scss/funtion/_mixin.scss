@@ -20,26 +20,92 @@
     font-weight: 500;
 }
 
-@mixin btn-l($bg-color) {
+@mixin btn-l($bg-color, $hover-color) {
+    position: relative;
+    z-index: 1;
+    
     font-size: map-get($font-size-button, l);
     font-weight: 500;
 
     border-radius: 99px;
 
     background-color: $bg-color;
+    box-shadow: $shadow-black-10;
     color: map-get($color, white);
 
     padding: 8px 24px;
+
+    overflow: hidden;
+
+    &:after {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 100%;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        background-color: $hover-color;
+        border-radius: 99px;
+
+        transition: all 0.3s ease;
+    }
+
+    &:hover {
+        color: #fff;
+    }
+
+    &:hover:after {
+        left: 0;
+        width: 100%;
+    }
+
+    &:active {
+        top: 2px;
+    }
 }
 
-@mixin btn-m($bg-color) {
+@mixin btn-m($bg-color, $hover-color) {
+    position: relative;
+    z-index: 1;
+
     font-size: map-get($font-size-button, m);
     font-weight: 500;
 
     border-radius: 99px;
 
     background-color: $bg-color;
+    box-shadow: $shadow-black-10;
     color: map-get($color, white);
 
     padding: 8px 24px;
+
+    overflow: hidden;
+
+    &:after {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 100%;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        background-color: $hover-color;
+        border-radius: 99px;
+
+        transition: all 0.3s ease;
+    }
+
+    &:hover {
+        color: #fff;
+    }
+
+    &:hover:after {
+        left: 0;
+        width: 100%;
+    }
+
+    &:active {
+        top: 2px;
+    }
 }
