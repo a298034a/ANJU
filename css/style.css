@@ -68,13 +68,14 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 80px;
+  height: 75px;
   padding: 10px 50px;
   background-color: #FDFDFD;
+  transition: all 0.3s ease;
 }
 #topbar .logo {
   width: 15%;
-  height: 60px;
+  height: 50px;
   min-width: 150px;
 }
 #topbar .logo img {
@@ -211,7 +212,7 @@ body {
 #banner-index .content .btn-container a:first-child {
   position: relative;
   z-index: 1;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 500;
   border-radius: 99px;
   background-color: #304173;
@@ -245,7 +246,7 @@ body {
 #banner-index .content .btn-container a:last-child {
   position: relative;
   z-index: 1;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 500;
   border-radius: 99px;
   background-color: #F2911B;
@@ -556,6 +557,130 @@ body {
   border-bottom: 1px solid #5D89D4;
 }
 #login-page .login-form a:hover {
+  color: #A6C6EA;
+}
+
+#signup-page {
+  display: flex;
+  height: calc(100vh - 160px);
+}
+#signup-page .banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  color: #FDFDFD;
+  background-color: #304173;
+}
+#signup-page .banner figure {
+  width: 50%;
+  padding: 5%;
+}
+#signup-page .banner h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+#signup-page .banner p {
+  margin-top: 10px;
+  font-size: 1rem;
+}
+#signup-page .banner::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  bottom: -80px;
+  width: 100%;
+  height: 80px;
+  background-color: #304173;
+}
+#signup-page .login-form {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: auto;
+}
+#signup-page .login-form form {
+  display: flex;
+  flex-direction: column;
+  /* 隱藏默認的 checkbox */
+  /* 自訂 checkbox 的外觀 */
+  /* 自訂 checkbox 勾選狀態的樣式 */
+}
+#signup-page .login-form form label[for=username],
+#signup-page .login-form form label[for=password] {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+#signup-page .login-form form input[type=text],
+#signup-page .login-form form input[type=password] {
+  width: 100%;
+  padding: 10px 1px;
+  margin-bottom: 25px;
+  border: none;
+  border-bottom: 1px solid #656565;
+  border-radius: 0;
+  background-color: transparent;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+#signup-page .login-form form input[type=text]:focus,
+#signup-page .login-form form input[type=password]:focus {
+  border-bottom-color: #D66709;
+}
+#signup-page .login-form form .custom-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+#signup-page .login-form form .custom-checkbox input[type=checkbox] {
+  display: none;
+}
+#signup-page .login-form form .custom-checkbox span {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #BDBDBD;
+  background-color: #F2F2F2;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+}
+#signup-page .login-form form .custom-checkbox span:hover {
+  background-color: #DCDCDC;
+}
+#signup-page .login-form form .custom-checkbox input[type=checkbox]:checked + span::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 6px;
+  height: 10px;
+  border: 2px solid #292929;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+#signup-page .login-form form button {
+  border: none;
+  border-radius: 3px;
+  padding: 8px 0;
+  margin-bottom: 25px;
+  background-color: #F2911B;
+  color: #FDFDFD;
+  cursor: pointer;
+}
+#signup-page .login-form form button span {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+#signup-page .login-form a {
+  display: inline;
+  color: #5D89D4;
+  border-bottom: 1px solid #5D89D4;
+}
+#signup-page .login-form a:hover {
   color: #A6C6EA;
 }
 

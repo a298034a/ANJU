@@ -1,6 +1,27 @@
 function Nav() {
+    const [isScrolled, setIsScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 0) {
+                setIsScrolled(true);
+            } else {
+                setIsScrolled(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     return (
-        <header id="topbar">
+        <header id="topbar" style={{
+            borderBottom: isScrolled ? "5px solid #304173" : "5px solid transparent",
+            boxShadow: isScrolled ? "0px 1px 2px 0px rgba(0, 0, 0, 25%)" : "none"            
+        }}>
             <a className="logo" href="./index.html">
                 <img src="./images/logo-full-b.png" alt="回首頁" />
             </a>

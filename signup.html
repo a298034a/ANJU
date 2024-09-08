@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>安居代管 ANJU 登入</title>
+    <title>安居代管 ANJU 註冊</title>
     <link rel="icon" href="./favicon.ico">
     <link rel="stylesheet" href="./css/style.min.css">
 
@@ -25,30 +25,32 @@
             return (
                 <>
                     <Nav />
-                    <main id="login-page">
+                    <main id="signup-page">
                         <section className="banner">
                             <figure>
-                                <img src="./images/login/welcome.png" alt="歡迎回來" />
+                                <img src="./images/signup/signup.png" alt="歡迎回來" />
                             </figure>
-                            <h2>歡迎回來！</h2>
-                            <p>請登入以查看您的物業最新狀況。</p>
+                            <h2>開始您的無憂管理旅程</h2>
+                            <p>註冊後，您可以隨時管理、掌握物業狀態，享受我們的全面管理服務。</p>
                         </section>
                         <section className="login-form">
                             <form action="">
-                                <label for="userid">帳號</label>
-                                <input type="text" id="userid" name="userid" placeholder="請輸入帳號" required />
-                                <label for="password">密碼</label>
-                                <input type="password" id="password" name="password" placeholder="請輸入密碼" required />
+                                <label for="username">*姓名</label>
+                                <input type="text" id="username" name="username" placeholder="請輸入您的姓名" required />
+                                <label for="userpw">*密碼</label>
+                                <input type="password" id="userpw" name="userpw" placeholder="請輸入您的密碼" required />
+                                <label for="userpw-confirm">*密碼確認</label>
+                                <input type="password" id="userpw-confirm" name="userpw-confirm" placeholder="請再次輸入您的密碼" required />
                                 <label className="custom-checkbox">
                                     <input type="checkbox" name="remember-me" />
                                     <span></span>
-                                    記住我
+                                    是否同意我們的 <a href="#">隱私政策</a>
                                 </label>
                                 <button type="submit">
-                                    <span>登入</span>
+                                    <span>註冊會員</span>
                                 </button>
                             </form>
-                            <p>尚未有帳號？<a href="./signup.html">立即加入</a></p>
+                            <p>已經有帳號了嗎？<a href="./login.html">立即登入</a></p>
                         </section>
                     </main>
                     <Footer />
