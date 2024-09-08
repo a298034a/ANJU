@@ -51,13 +51,49 @@ body {
   font-family: "Noto Sans TC", sans-serif;
   color: #292929;
   letter-spacing: 0.05rem;
-  padding-top: 80px;
+  padding-top: 75px;
   background-color: #FDFDFD;
 }
 
+/* 共用 */
 .low-highlight {
   text-decoration: underline solid #F2C438 16px;
   text-underline-offset: -6px;
+}
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  /* 自訂 checkbox 的外觀 */
+  /* 自訂 checkbox 勾選狀態的樣式 */
+}
+.custom-checkbox input[type=checkbox] {
+  display: none;
+}
+.custom-checkbox span {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #BDBDBD;
+  background-color: #F2F2F2;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.custom-checkbox span:hover {
+  background-color: #DCDCDC;
+}
+.custom-checkbox input[type=checkbox]:checked + span::before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 6px;
+  height: 10px;
+  border: 2px solid #292929;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
 }
 
 #topbar {
@@ -74,8 +110,7 @@ body {
   transition: all 0.3s ease;
 }
 #topbar .logo {
-  width: 15%;
-  height: 50px;
+  width: 13%;
   min-width: 150px;
 }
 #topbar .logo img {
@@ -162,7 +197,7 @@ body {
   top: 2px;
 }
 
-#banner-index {
+#index-banner {
   display: flex;
   justify-content: center;
   background-image: url(../images/index/banner.png);
@@ -170,7 +205,7 @@ body {
   background-position: top right;
   background-repeat: no-repeat;
 }
-#banner-index .content {
+#index-banner .content {
   position: relative;
   display: flex;
   justify-content: center;
@@ -179,7 +214,7 @@ body {
   margin-top: 20%;
   padding: 0 3.5%;
 }
-#banner-index .content::before {
+#index-banner .content::before {
   content: "";
   position: absolute;
   background-color: #FDFDFD;
@@ -187,20 +222,20 @@ body {
   height: 100%;
   border-radius: 15px 15px 0 0;
 }
-#banner-index .content .logo {
+#index-banner .content .logo {
   position: relative;
   z-index: 1;
   width: 85%;
   margin-top: -13%;
   margin-bottom: 8%;
 }
-#banner-index .content p {
+#index-banner .content p {
   position: relative;
   z-index: 1;
   font-size: 1.1rem;
   font-weight: 500;
 }
-#banner-index .content .btn-container {
+#index-banner .content .btn-container {
   position: relative;
   z-index: 1;
   display: flex;
@@ -209,7 +244,7 @@ body {
   margin-top: 13%;
   margin-bottom: 17%;
 }
-#banner-index .content .btn-container a:first-child {
+#index-banner .content .btn-container a:first-child {
   position: relative;
   z-index: 1;
   font-size: 1.4rem;
@@ -221,7 +256,7 @@ body {
   padding: 8px 24px;
   overflow: hidden;
 }
-#banner-index .content .btn-container a:first-child:after {
+#index-banner .content .btn-container a:first-child:after {
   position: absolute;
   content: "";
   width: 0;
@@ -233,17 +268,17 @@ body {
   border-radius: 99px;
   transition: all 0.3s ease;
 }
-#banner-index .content .btn-container a:first-child:hover {
+#index-banner .content .btn-container a:first-child:hover {
   color: #fff;
 }
-#banner-index .content .btn-container a:first-child:hover:after {
+#index-banner .content .btn-container a:first-child:hover:after {
   left: 0;
   width: 100%;
 }
-#banner-index .content .btn-container a:first-child:active {
+#index-banner .content .btn-container a:first-child:active {
   top: 2px;
 }
-#banner-index .content .btn-container a:last-child {
+#index-banner .content .btn-container a:last-child {
   position: relative;
   z-index: 1;
   font-size: 1.4rem;
@@ -255,7 +290,7 @@ body {
   padding: 8px 24px;
   overflow: hidden;
 }
-#banner-index .content .btn-container a:last-child:after {
+#index-banner .content .btn-container a:last-child:after {
   position: absolute;
   content: "";
   width: 0;
@@ -267,14 +302,14 @@ body {
   border-radius: 99px;
   transition: all 0.3s ease;
 }
-#banner-index .content .btn-container a:last-child:hover {
+#index-banner .content .btn-container a:last-child:hover {
   color: #fff;
 }
-#banner-index .content .btn-container a:last-child:hover:after {
+#index-banner .content .btn-container a:last-child:hover:after {
   left: 0;
   width: 100%;
 }
-#banner-index .content .btn-container a:last-child:active {
+#index-banner .content .btn-container a:last-child:active {
   top: 2px;
 }
 
@@ -362,7 +397,7 @@ body {
   top: 0;
   right: 0;
   z-index: -1;
-  background-color: #f9c550;
+  background-color: #f8ac27;
   border-radius: 99px;
   transition: all 0.3s ease;
 }
@@ -437,156 +472,36 @@ body {
   margin-bottom: 3%;
 }
 
-#login-page {
-  display: flex;
-  height: calc(100vh - 160px);
-}
-#login-page .banner {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 30%;
-  color: #FDFDFD;
-  background-color: #304173;
-}
-#login-page .banner figure {
-  width: 50%;
-}
-#login-page .banner h2 {
-  font-size: 2rem;
-  font-weight: 500;
-}
-#login-page .banner p {
-  margin-top: 10px;
-  font-size: 1rem;
-}
-#login-page .banner::after {
-  content: "";
-  position: absolute;
-  z-index: 1;
-  bottom: -80px;
-  width: 100%;
-  height: 80px;
-  background-color: #304173;
-}
-#login-page .login-form {
-  display: flex;
-  flex-direction: column;
-  width: 30%;
-  margin: auto;
-}
-#login-page .login-form form {
-  display: flex;
-  flex-direction: column;
-  /* 隱藏默認的 checkbox */
-  /* 自訂 checkbox 的外觀 */
-  /* 自訂 checkbox 勾選狀態的樣式 */
-}
-#login-page .login-form form label[for=username],
-#login-page .login-form form label[for=password] {
-  font-size: 1.1rem;
-  font-weight: 500;
-}
-#login-page .login-form form input[type=text],
-#login-page .login-form form input[type=password] {
-  width: 100%;
-  padding: 10px 1px;
-  margin-bottom: 25px;
-  border: none;
-  border-bottom: 1px solid #656565;
-  border-radius: 0;
-  background-color: transparent;
-  outline: none;
-  transition: border-color 0.3s ease;
-}
-#login-page .login-form form input[type=text]:focus,
-#login-page .login-form form input[type=password]:focus {
-  border-bottom-color: #D66709;
-}
-#login-page .login-form form .custom-checkbox {
-  display: flex;
-  align-items: center;
-  margin-bottom: 25px;
-}
-#login-page .login-form form .custom-checkbox input[type=checkbox] {
-  display: none;
-}
-#login-page .login-form form .custom-checkbox span {
-  width: 20px;
-  height: 20px;
-  border: 2px solid #BDBDBD;
-  background-color: #F2F2F2;
-  border-radius: 4px;
-  display: inline-block;
-  position: relative;
-  margin-right: 10px;
-  cursor: pointer;
-}
-#login-page .login-form form .custom-checkbox span:hover {
-  background-color: #DCDCDC;
-}
-#login-page .login-form form .custom-checkbox input[type=checkbox]:checked + span::before {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 5px;
-  width: 6px;
-  height: 10px;
-  border: 2px solid #292929;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
-#login-page .login-form form button {
-  border: none;
-  border-radius: 3px;
-  padding: 8px 0;
-  margin-bottom: 25px;
-  background-color: #F2911B;
-  color: #FDFDFD;
-  cursor: pointer;
-}
-#login-page .login-form form button span {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-#login-page .login-form a {
-  display: inline;
-  color: #5D89D4;
-  border-bottom: 1px solid #5D89D4;
-}
-#login-page .login-form a:hover {
-  color: #A6C6EA;
-}
-
+#login-page,
 #signup-page {
   display: flex;
   height: calc(100vh - 160px);
 }
-#signup-page .banner {
+
+.login-banner {
   position: relative;
   display: flex;
+  gap: 10px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 30%;
+  padding: 0 4.5%;
   color: #FDFDFD;
   background-color: #304173;
 }
-#signup-page .banner figure {
+.login-banner figure {
   width: 50%;
-  padding: 5%;
 }
-#signup-page .banner h2 {
+.login-banner h2 {
   font-size: 2rem;
   font-weight: 500;
 }
-#signup-page .banner p {
-  margin-top: 10px;
+.login-banner p {
   font-size: 1rem;
+  text-align: center;
 }
-#signup-page .banner::after {
+.login-banner::after {
   content: "";
   position: absolute;
   z-index: 1;
@@ -595,26 +510,22 @@ body {
   height: 80px;
   background-color: #304173;
 }
-#signup-page .login-form {
+
+.login-form {
   display: flex;
   flex-direction: column;
   width: 30%;
   margin: auto;
 }
-#signup-page .login-form form {
+.login-form form {
   display: flex;
   flex-direction: column;
-  /* 隱藏默認的 checkbox */
-  /* 自訂 checkbox 的外觀 */
-  /* 自訂 checkbox 勾選狀態的樣式 */
 }
-#signup-page .login-form form label[for=username],
-#signup-page .login-form form label[for=password] {
+.login-form form label:not(.custom-checkbox) {
   font-size: 1.1rem;
   font-weight: 500;
 }
-#signup-page .login-form form input[type=text],
-#signup-page .login-form form input[type=password] {
+.login-form form input:not([type=checkbox]) {
   width: 100%;
   padding: 10px 1px;
   margin-bottom: 25px;
@@ -625,44 +536,10 @@ body {
   outline: none;
   transition: border-color 0.3s ease;
 }
-#signup-page .login-form form input[type=text]:focus,
-#signup-page .login-form form input[type=password]:focus {
+.login-form form input:not([type=checkbox]):focus {
   border-bottom-color: #D66709;
 }
-#signup-page .login-form form .custom-checkbox {
-  display: flex;
-  align-items: center;
-  margin-bottom: 25px;
-}
-#signup-page .login-form form .custom-checkbox input[type=checkbox] {
-  display: none;
-}
-#signup-page .login-form form .custom-checkbox span {
-  width: 20px;
-  height: 20px;
-  border: 2px solid #BDBDBD;
-  background-color: #F2F2F2;
-  border-radius: 4px;
-  display: inline-block;
-  position: relative;
-  margin-right: 10px;
-  cursor: pointer;
-}
-#signup-page .login-form form .custom-checkbox span:hover {
-  background-color: #DCDCDC;
-}
-#signup-page .login-form form .custom-checkbox input[type=checkbox]:checked + span::before {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 5px;
-  width: 6px;
-  height: 10px;
-  border: 2px solid #292929;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
-#signup-page .login-form form button {
+.login-form form button {
   border: none;
   border-radius: 3px;
   padding: 8px 0;
@@ -671,17 +548,200 @@ body {
   color: #FDFDFD;
   cursor: pointer;
 }
-#signup-page .login-form form button span {
+.login-form form button span {
   font-size: 1.2rem;
   font-weight: 600;
 }
-#signup-page .login-form a {
+.login-form form .custom-checkbox {
+  margin-bottom: 25px;
+}
+.login-form a {
   display: inline;
   color: #5D89D4;
   border-bottom: 1px solid #5D89D4;
 }
-#signup-page .login-form a:hover {
+.login-form a:hover {
   color: #A6C6EA;
+}
+
+#consult-page {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#consult-page .consult-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+#consult-page .consult-banner::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  left: 0;
+  border-style: solid;
+  border-width: 20vh 50vw 0 0;
+  border-color: #304173 transparent transparent transparent;
+}
+#consult-page .consult-banner::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 0 50vw 20vh 0;
+  border-color: transparent #304173 transparent transparent;
+}
+#consult-page .consult-banner figure {
+  margin-top: 5%;
+  margin-left: 10px;
+  width: 7%;
+  min-width: 100px;
+}
+#consult-page .consult-banner h2 {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+}
+#consult-page .consult-form {
+  width: 40%;
+  min-width: 680px;
+  margin-top: 70px;
+}
+#consult-page .consult-form .form-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #989898;
+}
+#consult-page .consult-form .form-group label,
+#consult-page .consult-form .form-group .empty {
+  flex: 1;
+  font-size: 1.1rem;
+}
+#consult-page .consult-form .form-group label[for=message] {
+  align-self: flex-start;
+  padding-top: 25px;
+}
+#consult-page .consult-form .form-group .input-wraper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+  flex: 2;
+  padding: 25px 0;
+}
+#consult-page .consult-form .form-group .input-wraper input[type=text],
+#consult-page .consult-form .form-group .input-wraper input[type=tel],
+#consult-page .consult-form .form-group .input-wraper textarea,
+#consult-page .consult-form .form-group .input-wraper select {
+  font-size: 1rem;
+  border: 1px solid #BDBDBD;
+  border-radius: 3px;
+  background-color: #F2F2F2;
+  box-shadow: rgba(0, 0, 0, 0.2) 0.8px 0.8px 3px 0px inset;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+#consult-page .consult-form .form-group .input-wraper input[type=text]:focus,
+#consult-page .consult-form .form-group .input-wraper input[type=tel]:focus,
+#consult-page .consult-form .form-group .input-wraper textarea:focus,
+#consult-page .consult-form .form-group .input-wraper select:focus {
+  border-color: #656565;
+}
+#consult-page .consult-form .form-group .input-wraper input[type=text]::placeholder,
+#consult-page .consult-form .form-group .input-wraper input[type=tel]::placeholder,
+#consult-page .consult-form .form-group .input-wraper textarea::placeholder {
+  font-size: 0.875rem;
+}
+#consult-page .consult-form .form-group .input-wraper input[type=text],
+#consult-page .consult-form .form-group .input-wraper input[type=tel],
+#consult-page .consult-form .form-group .input-wraper select {
+  height: 38px;
+  width: 100%;
+  padding: 0 10px;
+}
+#consult-page .consult-form .form-group .input-wraper textarea {
+  width: 100%;
+  padding: 10px;
+}
+#consult-page .consult-form .form-group .input-wraper .radio-wraper {
+  display: flex;
+  align-items: center;
+}
+#consult-page .consult-form .form-group .input-wraper .radio-wraper input[type=text] {
+  width: 100%;
+}
+#consult-page .consult-form .form-group .input-wraper .radio-wraper input[type=radio] {
+  margin-right: 5px;
+}
+#consult-page .consult-form .form-group .input-wraper .radio-wraper:nth-child(-n+2) {
+  margin-right: 20px;
+}
+#consult-page .consult-form .form-group .input-wraper .radio-wraper:last-child {
+  flex: 1;
+}
+#consult-page .consult-form .form-group .input-wraper .custom-checkbox span {
+  width: 25px;
+  height: 25px;
+}
+#consult-page .consult-form .form-group a {
+  display: inline;
+  color: #5D89D4;
+  border-bottom: 1px solid #5D89D4;
+}
+#consult-page .consult-form .form-group a:hover {
+  color: #A6C6EA;
+}
+#consult-page .consult-form .form-group:nth-last-child(2) {
+  border: none;
+}
+#consult-page .consult-form .button-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#consult-page .consult-form button {
+  border: none;
+  position: relative;
+  z-index: 1;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 99px;
+  background-color: #F2911B;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+  color: #FDFDFD;
+  padding: 8px 24px;
+  overflow: hidden;
+}
+#consult-page .consult-form button:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #f8ac27;
+  border-radius: 99px;
+  transition: all 0.3s ease;
+}
+#consult-page .consult-form button:hover {
+  color: #fff;
+}
+#consult-page .consult-form button:hover:after {
+  left: 0;
+  width: 100%;
+}
+#consult-page .consult-form button:active {
+  top: 2px;
 }
 
 footer {

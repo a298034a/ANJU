@@ -8,13 +8,54 @@ body {
     color: map-get($color, concrete-950);
     letter-spacing: 0.05rem;
 
-    padding-top: 80px;
+    padding-top: 75px;
     background-color: map-get($color, white);
 }
 
+/* 共用 */
 .low-highlight {
     text-decoration: underline solid map-get($color, saffron-main) 16px;
     text-underline-offset: -6px;
+}
+
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    /* 自訂 checkbox 的外觀 */
+    span {
+        width: 20px;
+        height: 20px;
+        border: 2px solid map-get($color, concrete-300);
+        background-color: map-get($color, concrete-100);
+        border-radius: 4px;
+        display: inline-block;
+        position: relative;
+        margin-right: 10px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: map-get($color, concrete-200);
+        }
+    }
+
+    /* 自訂 checkbox 勾選狀態的樣式 */
+    input[type="checkbox"]:checked+span::before {
+        content: '';
+        position: absolute;
+        top: 2px;
+        left: 5px;
+        width: 6px;
+        height: 10px;
+        border: 2px solid map-get($color, concrete-950);
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
 }
 
 #topbar {
@@ -34,8 +75,7 @@ body {
     transition: all 0.3s ease;
 
     .logo {
-        width: 15%;
-        height: 50px;
+        width: 13%;
         min-width: 150px;
 
         img {
@@ -68,7 +108,7 @@ body {
     }
 }
 
-#banner-index {
+#index-banner {
     display: flex;
     justify-content: center;
 
@@ -211,7 +251,7 @@ body {
 
                 a {
                     width: fit-content;
-                    @include btn-general(map-get($font-size-button, m), map-get($color, carrot-main), map-get($color, carrot-300));
+                    @include btn-general(map-get($font-size-button, m), map-get($color, carrot-main), map-get($color, carrot-400));
                 }
             }
 
@@ -258,293 +298,291 @@ body {
     }
 }
 
-#login-page {
+#login-page,
+#signup-page {
     display: flex;
     height: calc(100vh - 160px);
+}
 
-    .banner {
-        position: relative;
+.login-banner {
+    position: relative;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 30%;
+    padding: 0 4.5%;
+
+    color: map-get($color, white);
+    background-color: map-get($color, astronaut-main);
+
+    figure {
+        width: 50%;
+    }
+
+    h2 {
+        @include title-l;
+    }
+
+    p {
+        font-size: map-get($font-size-content, m);
+        text-align: center;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        bottom: -80px;
+        width: 100%;
+        height: 80px;
+        background-color: map-get($color, astronaut-main);
+    }
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: auto;
+
+    form {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
 
-        width: 30%;
-
-        color: map-get($color, white);
-        background-color: map-get($color, astronaut-main);
-
-        figure {
-            width: 50%;
+        label:not(.custom-checkbox) {
+            @include title-m;
         }
 
-        h2 {
-            @include title-l;
-        }
-
-        p {
-            margin-top: 10px;
-            font-size: map-get($font-size-content, m);
-        }
-
-        &::after {
-            content: "";
-            position: absolute;
-            z-index: 1;
-            bottom: -80px;
+        input:not([type="checkbox"]) {
             width: 100%;
-            height: 80px;
-            background-color: map-get($color, astronaut-main);
+
+            padding: 10px 1px;
+            margin-bottom: 25px;
+
+            border: none;
+            border-bottom: 1px solid map-get($color, concrete-600);
+            border-radius: 0;
+
+            background-color: transparent;
+            outline: none;
+            transition: border-color 0.3s ease;
+
+            &:focus {
+                border-bottom-color: map-get($color, carrot-600);
+            }
+        }
+
+        button {
+            border: none;
+            border-radius: 3px;
+            padding: 8px 0;
+            margin-bottom: 25px;
+            background-color: map-get($color, carrot-main);
+            color: map-get($color, white);
+            cursor: pointer;
+
+            span {
+                font-size: map-get($font-size-button, m);
+                font-weight: 600;
+            }
+        }
+
+        .custom-checkbox {
+            margin-bottom: 25px;
         }
     }
 
-    .login-form {
-        display: flex;
-        flex-direction: column;
-        width: 30%;
-        margin: auto;
+    a {
+        display: inline;
+        color: map-get($color, astronaut-500);
+        border-bottom: 1px solid map-get($color, astronaut-500);
 
-        form {
-            display: flex;
-            flex-direction: column;
-
-            label[for="username"],
-            label[for="password"] {
-                @include title-m;
-            }
-
-            input[type="text"],
-            input[type="password"] {
-                width: 100%;
-
-                padding: 10px 1px;
-                margin-bottom: 25px;
-
-                border: none;
-                border-bottom: 1px solid map-get($color, concrete-600);
-                border-radius: 0;
-
-                background-color: transparent;
-                outline: none;
-                transition: border-color 0.3s ease;
-            }
-
-            input[type="text"]:focus,
-            input[type="password"]:focus {
-                border-bottom-color: map-get($color, carrot-600);
-            }
-
-            .custom-checkbox {
-                display: flex;
-                align-items: center;
-                margin-bottom: 25px;
-            }
-
-            /* 隱藏默認的 checkbox */
-            .custom-checkbox input[type="checkbox"] {
-                display: none;
-            }
-
-            /* 自訂 checkbox 的外觀 */
-            .custom-checkbox span {
-                width: 20px;
-                height: 20px;
-                border: 2px solid map-get($color, concrete-300);
-                background-color: map-get($color, concrete-100);
-                border-radius: 4px;
-                display: inline-block;
-                position: relative;
-                margin-right: 10px;
-                cursor: pointer;
-
-                &:hover {
-                    background-color: map-get($color, concrete-200);
-                }
-            }
-
-            /* 自訂 checkbox 勾選狀態的樣式 */
-            .custom-checkbox input[type="checkbox"]:checked+span::before {
-                content: '';
-                position: absolute;
-                top: 2px;
-                left: 5px;
-                width: 6px;
-                height: 10px;
-                border: 2px solid map-get($color, concrete-950);
-                border-width: 0 2px 2px 0;
-                transform: rotate(45deg);
-            }
-
-            button {
-                border: none;
-                border-radius: 3px;
-                padding: 8px 0;
-                margin-bottom: 25px;
-                background-color: map-get($color, carrot-main);
-                color: map-get($color, white);
-                cursor: pointer;
-
-                span {
-                    font-size: map-get($font-size-button, m);
-                    font-weight: 600;
-                }
-            }
-        }
-
-        a {
-            display: inline;
-            color: map-get($color, astronaut-500);
-            border-bottom: 1px solid map-get($color, astronaut-500);
-
-            &:hover {
-                color: map-get($color, astronaut-300);
-            }
+        &:hover {
+            color: map-get($color, astronaut-300);
         }
     }
 }
 
-#signup-page {
+#consult-page {
     display: flex;
-    height: calc(100vh - 160px);
+    justify-content: center;
+    flex-wrap: wrap;
 
-    .banner {
+    .consult-banner {
         position: relative;
+
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
+        gap: 20px;
 
-        width: 30%;
-
-        color: map-get($color, white);
-        background-color: map-get($color, astronaut-main);
-
-        figure {
-            width: 50%;
-            padding: 5%;
-        }
-
-        h2 {
-            @include title-l;
-        }
-
-        p {
-            margin-top: 10px;
-            font-size: map-get($font-size-content, m);
-        }
+        width: 100%;
 
         &::after {
             content: "";
             position: absolute;
-            z-index: 1;
-            bottom: -80px;
-            width: 100%;
-            height: 80px;
-            background-color: map-get($color, astronaut-main);
+            z-index: -1;
+            width: 0;
+            height: 0;
+            left: 0;
+            border-style: solid;
+            border-width: 20vh 50vw 0 0;
+            border-color: map-get($color, astronaut-main) transparent transparent transparent;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 0;
+            height: 0;
+            right: 0;
+            border-style: solid;
+            border-width: 0 50vw 20vh 0;
+            border-color: transparent map-get($color, astronaut-main) transparent transparent;
+        }
+
+        figure {
+            margin-top: 5%;
+            margin-left: 10px;
+            width: 7%;
+            min-width: 100px;
+        }
+
+        h2 {
+            @include title-l;
+            text-align: center;
         }
     }
 
-    .login-form {
-        display: flex;
-        flex-direction: column;
-        width: 30%;
-        margin: auto;
+    .consult-form {
+        width: 40%;
+        min-width: 680px;
 
-        form {
+        margin-top: 70px;
+
+        .form-group {
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
 
-            label[for="username"],
-            label[for="password"] {
-                @include title-m;
+            border-bottom: 1px solid map-get($color, concrete-400);
+
+            label,
+            .empty {
+                flex: 1;
+                font-size: map-get($font-size-title, m);
             }
 
-            input[type="text"],
-            input[type="password"] {
-                width: 100%;
-
-                padding: 10px 1px;
-                margin-bottom: 25px;
-
-                border: none;
-                border-bottom: 1px solid map-get($color, concrete-600);
-                border-radius: 0;
-
-                background-color: transparent;
-                outline: none;
-                transition: border-color 0.3s ease;
+            label[for="message"] {
+                align-self: flex-start;
+                padding-top: 25px;
             }
 
-            input[type="text"]:focus,
-            input[type="password"]:focus {
-                border-bottom-color: map-get($color, carrot-600);
-            }
-
-            .custom-checkbox {
+            .input-wraper {
                 display: flex;
                 align-items: center;
-                margin-bottom: 25px;
-            }
 
-            /* 隱藏默認的 checkbox */
-            .custom-checkbox input[type="checkbox"] {
-                display: none;
-            }
+                width: 100%;
+                flex-wrap: wrap;
 
-            /* 自訂 checkbox 的外觀 */
-            .custom-checkbox span {
-                width: 20px;
-                height: 20px;
-                border: 2px solid map-get($color, concrete-300);
-                background-color: map-get($color, concrete-100);
-                border-radius: 4px;
-                display: inline-block;
-                position: relative;
-                margin-right: 10px;
-                cursor: pointer;
+                flex: 2;
 
-                &:hover {
-                    background-color: map-get($color, concrete-200);
+                padding: 25px 0;
+
+                input[type="text"],
+                input[type="tel"],
+                textarea,
+                select {
+                    font-size: map-get($font-size-content, m);
+
+                    border: 1px solid map-get($color, concrete-300);
+                    border-radius: 3px;
+
+                    background-color: map-get($color, concrete-100);
+                    box-shadow: rgba(0, 0, 0, 0.2) 0.8px 0.8px 3px 0px inset;
+
+                    outline: none;
+                    transition: border-color 0.3s ease;
+
+                    &:focus {
+                        border-color: map-get($color, concrete-600);
+                    }
+                }
+
+                input[type="text"]::placeholder,
+                input[type="tel"]::placeholder,
+                textarea::placeholder {
+                    font-size: map-get($font-size-aide, s);
+                }
+
+                input[type="text"],
+                input[type="tel"],
+                select {
+                    height: 38px;
+                    width: 100%;
+                    padding: 0 10px;
+                }
+
+                textarea {
+                    width: 100%;
+                    padding: 10px;
+                }
+
+                .radio-wraper {
+                    display: flex;
+                    align-items: center;
+
+                    input[type="text"] {
+                        width: 100%;
+                    }
+
+                    input[type="radio"] {
+                        margin-right: 5px;
+                    }
+                }
+
+                .radio-wraper:nth-child(-n+2) {
+                    margin-right: 20px;
+                }
+
+                .radio-wraper:last-child {
+                    flex: 1;
+                }
+
+                .custom-checkbox span {
+                    width: 25px;
+                    height: 25px;
                 }
             }
 
-            /* 自訂 checkbox 勾選狀態的樣式 */
-            .custom-checkbox input[type="checkbox"]:checked+span::before {
-                content: '';
-                position: absolute;
-                top: 2px;
-                left: 5px;
-                width: 6px;
-                height: 10px;
-                border: 2px solid map-get($color, concrete-950);
-                border-width: 0 2px 2px 0;
-                transform: rotate(45deg);
-            }
+            a {
+                display: inline;
+                color: map-get($color, astronaut-500);
+                border-bottom: 1px solid map-get($color, astronaut-500);
 
-            button {
-                border: none;
-                border-radius: 3px;
-                padding: 8px 0;
-                margin-bottom: 25px;
-                background-color: map-get($color, carrot-main);
-                color: map-get($color, white);
-                cursor: pointer;
-
-                span {
-                    font-size: map-get($font-size-button, m);
-                    font-weight: 600;
+                &:hover {
+                    color: map-get($color, astronaut-300);
                 }
             }
         }
 
-        a {
-            display: inline;
-            color: map-get($color, astronaut-500);
-            border-bottom: 1px solid map-get($color, astronaut-500);
+        .form-group:nth-last-child(2) {
+            border: none;
+        }
 
-            &:hover {
-                color: map-get($color, astronaut-300);
-            }
+        .button-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            border: none;
+            @include btn-general(map-get($font-size-button, m), map-get($color, carrot-main), map-get($color, carrot-400));
         }
     }
 }

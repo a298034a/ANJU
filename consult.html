@@ -1,11 +1,145 @@
 <!DOCTYPE html>
 <html lang="zh-Hant-TW">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>安居代管 ANJU 免費諮詢</title>
-</head>
-<body>
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./css/style.min.css">
 
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" src="./js/NavAndFooter.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        function App() {
+            return (
+                <>
+                    <Nav />
+                    <main id="consult-page">
+                        <section className="consult-banner">
+                            <figure>
+                                <img src="./images/logo-image.png" alt="安居代管 logo" />
+                            </figure>
+                            <h2>免費諮詢<br />讓安居解答您的物業管理問題</h2>
+                            <p>我們的專業團隊隨時準備為您提供物業管理的專業建議和解決方案。立即填寫表單，開始您的無憂管理之旅。</p>
+                        </section>
+                        <section className="consult-form">
+                            <form action="">
+                                {/* 姓名 */}
+                                <div class="form-group">
+                                    <label for="username">*姓名</label>
+                                    <div class="input-wraper">
+                                        <input type="text" id="username" name="username" placeholder="請輸入您的姓名" required />
+                                    </div>
+                                </div>
+
+                                {/* 尊稱 radio */}
+                                <div class="form-group">
+                                    <div class="empty">尊稱：</div>
+                                    <div class="input-wraper">
+                                        <div class="radio-wraper">
+                                            <input type="radio" id="mr" name="title" value="mr" />
+                                            <label for="mr">先生</label>
+                                        </div>
+
+                                        <div class="radio-wraper">
+                                            <input type="radio" id="ms" name="title" value="ms" />
+                                            <label for="ms">小姐</label>
+                                        </div>
+
+                                        <div class="radio-wraper">
+                                            <input type="radio" id="other" name="title" value="other" />
+                                            <label for="other">其他：</label>
+                                        </div>
+                                        <div class="radio-wraper">
+                                            <input type="text" id="other-text" name="other-title" placeholder="請輸入" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* 電話 */}
+                                <div class="form-group">
+                                    <label for="phone">*連絡電話：</label>
+                                    <div class="input-wraper">
+                                        <input type="tel" id="phone" name="phone" placeholder="請輸入您的電話" required />
+                                    </div>
+                                </div>
+
+                                {/* 方便連絡時段 */}
+                                <div class="form-group">
+                                    <div class="empty">方便連絡時段（可複選）：</div>
+
+                                    <div class="input-wraper">
+                                        <label className="custom-checkbox" for="morning">
+                                            <input type="checkbox" id="morning" name="contact-time" value="morning" />
+                                            <span></span>
+                                            早上（8AM - 12PM）
+                                        </label>
+
+                                        <label className="custom-checkbox" for="afternoon">
+                                            <input type="checkbox" id="afternoon" name="contact-time" value="afternoon" />
+                                            <span></span>
+                                            下午（12PM - 6PM）
+                                        </label>
+                                    </div>
+                                </div>
+
+                                {/* 諮詢項目 */}
+                                <div class="form-group">
+                                    <label for="consultation">*諮詢項目：</label>
+                                    <div class="input-wraper">
+                                        <select id="consultation" name="consultation" required>
+                                            <option value="" disabled selected>請選擇</option>
+                                            <option value="rental-management">包租代管</option>
+                                            <option value="renovation">裝修服務</option>
+                                            <option value="backend-system">後台系統</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message">*諮詢內容：</label>
+                                    <div class="input-wraper">
+                                        <textarea id="message" name="message" rows="6" cols="50" placeholder="請輸入您的問題或需求" required></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="empty"></div>
+                                    <div class="input-wraper">
+                                        <label className="custom-checkbox">
+                                            <input type="checkbox" name="remember-me" />
+                                            <span></span>
+                                            是否同意我們的 <a href="#">隱私政策</a>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="button-wrapper">
+                                    <button type="submit">
+                                        <span>送出諮詢</span>
+                                    </button>
+                                </div>
+                            </form>
+                        </section>
+                    </main>
+                    <Footer />
+                </>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
 </body>
+
 </html>

@@ -31,7 +31,7 @@ function Nav() {
                     <li><a href="#">裝修服務</a></li>
                     <li><a href="#">系統介紹</a></li>
                     <li><a href="./login.html">登入註冊</a></li>
-                    <li><a href="#">免費諮詢</a></li>
+                    <li><a href="./consult.html">免費諮詢</a></li>
                 </ul>
             </div>
         </header>
