@@ -462,7 +462,7 @@ body {
         width: 40%;
         min-width: 680px;
 
-        margin-top: 70px;
+        margin: 70px 0;
 
         .form-group {
             display: flex;
@@ -503,7 +503,7 @@ body {
                     border-radius: 3px;
 
                     background-color: map-get($color, concrete-100);
-                    box-shadow: rgba(0, 0, 0, 0.2) 0.8px 0.8px 3px 0px inset;
+                    box-shadow: $shadow-input-inner;
 
                     outline: none;
                     transition: border-color 0.3s ease;
@@ -568,6 +568,59 @@ body {
                     color: map-get($color, astronaut-300);
                 }
             }
+
+            /* 隱藏原生 radio 按鈕 */
+            input[type="radio"] {
+                display: none;
+            }
+
+            .custom-radio {
+                display: inline-flex;
+                align-items: center;
+
+                position: relative;
+                padding-left: 25px;
+                margin-right: 20px;
+                
+                /* 間距 */
+                font-size: 16px;
+                
+                cursor: pointer;
+            }
+
+            .custom-radio::before {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                border: 1px solid map-get($color, concrete-300);
+                background-color:  map-get($color, concrete-100);
+                box-shadow: $shadow-input-inner;
+            }
+
+            /* 當 radio 被選中時，自定義樣式 */
+            input[type="radio"]:checked+.custom-radio::before {
+                background-color: map-get($color, astronaut-700);       
+            }
+
+            input[type="radio"]:checked+.custom-radio::after {
+                content: '';
+                display: block;
+                position: absolute;
+                left: 6px;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 10px;
+                height: 10px;
+                background-color: map-get($color, concrete-100);
+                border-radius: 50%;
+                /* 小圓點 */
+            }
         }
 
         .form-group:nth-last-child(2) {
@@ -578,9 +631,10 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-top: 20px;
         }
 
-        button {
+        button {            
             border: none;
             @include btn-general(map-get($font-size-button, m), map-get($color, carrot-main), map-get($color, carrot-400));
         }

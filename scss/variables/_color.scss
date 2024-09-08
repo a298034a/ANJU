@@ -5,6 +5,7 @@ $color: (
     astronaut-main:#304173,
     astronaut-300:#A6C6EA,
     astronaut-500:#5D89D4,
+    astronaut-700:#3f5db6,
     astronaut-800:#384D95,
 
     /* 橘色 */
@@ -26,4 +27,5 @@ $color: (
     concrete-950:#292929
 );
 
-$shadow-black-10: 0px 1px 2px 0px rgba(0, 0, 0, 25%)
+$shadow-black-10: 0px 1px 2px 0px rgba(0, 0, 0, 25%);
+$shadow-input-inner: rgba(0, 0, 0, 0.2) 0.8px 0.8px 3px 0px inset;

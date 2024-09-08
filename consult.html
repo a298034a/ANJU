@@ -36,50 +36,50 @@
                         <section className="consult-form">
                             <form action="">
                                 {/* 姓名 */}
-                                <div class="form-group">
+                                <div className="form-group">
                                     <label for="username">*姓名</label>
-                                    <div class="input-wraper">
+                                    <div className="input-wraper">
                                         <input type="text" id="username" name="username" placeholder="請輸入您的姓名" required />
                                     </div>
                                 </div>
 
                                 {/* 尊稱 radio */}
-                                <div class="form-group">
-                                    <div class="empty">尊稱：</div>
-                                    <div class="input-wraper">
-                                        <div class="radio-wraper">
+                                <div className="form-group">
+                                    <div className="empty">尊稱：</div>
+                                    <div className="input-wraper">
+                                        <div className="radio-wraper">
                                             <input type="radio" id="mr" name="title" value="mr" />
-                                            <label for="mr">先生</label>
+                                            <label for="mr" className="custom-radio">先生</label>
                                         </div>
 
-                                        <div class="radio-wraper">
+                                        <div className="radio-wraper">
                                             <input type="radio" id="ms" name="title" value="ms" />
-                                            <label for="ms">小姐</label>
+                                            <label for="ms" className="custom-radio">小姐</label>
                                         </div>
 
-                                        <div class="radio-wraper">
+                                        <div className="radio-wraper">
                                             <input type="radio" id="other" name="title" value="other" />
-                                            <label for="other">其他：</label>
+                                            <label for="other" className="custom-radio">其他：</label>
                                         </div>
-                                        <div class="radio-wraper">
+                                        <div className="radio-wraper">
                                             <input type="text" id="other-text" name="other-title" placeholder="請輸入" />
                                         </div>
                                     </div>
                                 </div>
 
                                 {/* 電話 */}
-                                <div class="form-group">
+                                <div className="form-group">
                                     <label for="phone">*連絡電話：</label>
-                                    <div class="input-wraper">
+                                    <div className="input-wraper">
                                         <input type="tel" id="phone" name="phone" placeholder="請輸入您的電話" required />
                                     </div>
                                 </div>
 
                                 {/* 方便連絡時段 */}
-                                <div class="form-group">
-                                    <div class="empty">方便連絡時段（可複選）：</div>
+                                <div className="form-group">
+                                    <div className="empty">方便連絡時段（可複選）：</div>
 
-                                    <div class="input-wraper">
+                                    <div className="input-wraper">
                                         <label className="custom-checkbox" for="morning">
                                             <input type="checkbox" id="morning" name="contact-time" value="morning" />
                                             <span></span>
@@ -95,9 +95,9 @@
                                 </div>
 
                                 {/* 諮詢項目 */}
-                                <div class="form-group">
+                                <div className="form-group">
                                     <label for="consultation">*諮詢項目：</label>
-                                    <div class="input-wraper">
+                                    <div className="input-wraper">
                                         <select id="consultation" name="consultation" required>
                                             <option value="" disabled selected>請選擇</option>
                                             <option value="rental-management">包租代管</option>
@@ -107,16 +107,16 @@
                                     </div>
                                 </div>
 
-                                <div class="form-group">
+                                <div className="form-group">
                                     <label for="message">*諮詢內容：</label>
-                                    <div class="input-wraper">
+                                    <div className="input-wraper">
                                         <textarea id="message" name="message" rows="6" cols="50" placeholder="請輸入您的問題或需求" required></textarea>
                                     </div>
                                 </div>
 
-                                <div class="form-group">
-                                    <div class="empty"></div>
-                                    <div class="input-wraper">
+                                <div className="form-group">
+                                    <div className="empty"></div>
+                                    <div className="input-wraper">
                                         <label className="custom-checkbox">
                                             <input type="checkbox" name="remember-me" />
                                             <span></span>
@@ -125,7 +125,7 @@
                                     </div>
                                 </div>
 
-                                <div class="button-wrapper">
+                                <div className="button-wrapper">
                                     <button type="submit">
                                         <span>送出諮詢</span>
                                     </button>

@@ -336,7 +336,7 @@ body {
   padding: 0 55px;
 }
 #performance ul .item h3 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 500;
   margin-bottom: 10px;
 }
@@ -370,7 +370,7 @@ body {
   margin: auto 5%;
 }
 #service .item .container .content h2 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 500;
 }
 #service .item .container .content p {
@@ -494,7 +494,7 @@ body {
   width: 50%;
 }
 .login-banner h2 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 500;
 }
 .login-banner p {
@@ -606,20 +606,22 @@ body {
   min-width: 100px;
 }
 #consult-page .consult-banner h2 {
-  font-size: 2rem;
+  font-size: 1.7rem;
   font-weight: 500;
   text-align: center;
 }
 #consult-page .consult-form {
   width: 40%;
   min-width: 680px;
-  margin-top: 70px;
+  margin: 70px 0;
 }
 #consult-page .consult-form .form-group {
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #989898;
+  /* 隱藏原生 radio 按鈕 */
+  /* 當 radio 被選中時，自定義樣式 */
 }
 #consult-page .consult-form .form-group label,
 #consult-page .consult-form .form-group .empty {
@@ -700,6 +702,49 @@ body {
 #consult-page .consult-form .form-group a:hover {
   color: #A6C6EA;
 }
+#consult-page .consult-form .form-group input[type=radio] {
+  display: none;
+}
+#consult-page .consult-form .form-group .custom-radio {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding-left: 25px;
+  margin-right: 20px;
+  /* 間距 */
+  font-size: 16px;
+  cursor: pointer;
+}
+#consult-page .consult-form .form-group .custom-radio::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid #BDBDBD;
+  background-color: #F2F2F2;
+  box-shadow: rgba(0, 0, 0, 0.2) 0.8px 0.8px 3px 0px inset;
+}
+#consult-page .consult-form .form-group input[type=radio]:checked + .custom-radio::before {
+  background-color: #3f5db6;
+}
+#consult-page .consult-form .form-group input[type=radio]:checked + .custom-radio::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: #F2F2F2;
+  border-radius: 50%;
+  /* 小圓點 */
+}
 #consult-page .consult-form .form-group:nth-last-child(2) {
   border: none;
 }
@@ -707,6 +752,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 20px;
 }
 #consult-page .consult-form button {
   border: none;

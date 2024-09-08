@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安居代管 ANJU 系統介紹</title>
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./css/style.min.css">
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" src="./js/NavAndFooter.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        function App() {
+            return (
+                <>
+                    <Nav />
+                    <main id="systemdescribe-page">
+                        <section className="systemdescribe-banner">
+                            <figure className="mockup">
+                                <img src="./images/systemdescribe/mockup.png" alt="後台系統 mockup 圖片" />
+                            </figure>
+                            <div className="content">
+                                <h2>先進管理系統，隨時掌控房屋狀態</h2>
+                                <p>我們的管理系統讓您能夠隨時檢視房屋狀態，從租金收取到維修記錄，所有訊息一目了然，實現無憂管理。</p>
+                            </div>
+                        </section>
+                    </main>
+                    <Footer />
+                </>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+</body>
+
+</html>
