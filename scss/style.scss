@@ -642,20 +642,234 @@ body {
 }
 
 #systemdescribe-page {
+
     .systemdescribe-banner {
+        position: relative;
         display: flex;
         justify-content: center;
 
         background-color: map-get($color, astronaut-main);
 
         figure {
+            position: relative;
             width: 35%;
+            overflow: hidden;
+
+            img {
+                object-fit: cover;
+                width: 100%;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                width: 0;
+                height: 0;
+                top: 0;
+                left: 0;
+                border-style: solid;
+                border-width: 10vh 18vw 0 0;
+                border-color: map-get($color, astronaut-main) transparent transparent transparent;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                width: 0;
+                height: 0;
+                top: 0;
+                right: 0;
+                border-style: solid;
+                border-width: 0 18vw 10vh 0;
+                border-color: transparent map-get($color, astronaut-main) transparent transparent;
+            }
         }
 
-        .content{
+        .content {
+            position: relative;
+
             display: flex;
-            flex-direction: column;      
+            flex-direction: column;
             align-items: center;
+            justify-content: flex-end;
+            gap: 30px;
+
+            width: 35%;
+            padding: 5% 3%;
+            text-align: center;
+
+            overflow: hidden;
+            background-color: map-get($color, white);
+
+            h2 {
+                @include title-l;
+            }
+
+            p {
+                font-size: map-get($font-size-content, m)
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                width: 0;
+                height: 0;
+                top: 0;
+                left: 0;
+                border-style: solid;
+                border-width: 20vh 40vw 0 0;
+                border-color: map-get($color, astronaut-main) transparent transparent transparent;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                width: 0;
+                height: 0;
+                top: 0;
+                right: 0;
+                border-style: solid;
+                border-width: 0 40vw 20vh 0;
+                border-color: transparent map-get($color, astronaut-main) transparent transparent;
+            }
+        }
+
+        .stair {
+            position: absolute;
+            z-index: 2;
+            right: 20%;
+            bottom: -120px;
+        }
+    }
+
+    .description {
+        position: relative;
+        padding: 70px 16%;
+
+        overflow: hidden;
+
+        &::after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 0;
+            height: 0;
+            top: 0;
+            left: 0;
+            border-style: solid;
+            border-width: 32vh 100vw 0 0;
+            border-color: map-get($color, astronaut-main) transparent transparent transparent;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            width: 100vw;
+            height: 70%;
+            bottom: 0;
+            left: 0;
+            background-color: map-get($color, concrete-100);
+
+            clip-path: polygon(0 50%, 100% 65%, 100% 100%, 0% 100%);
+        }
+
+        h2 {
+            @include title-l;
+            text-align: center;
+            color: map-get($color, white);
+        }
+
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            margin-top: 120px;
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                gap: 20px;
+                margin-right: 80px;
+                width: 50%;
+
+                h3 {
+                    @include title-l;
+                }
+
+                p {
+                    font-size: map-get($font-size-content, m);
+                }
+
+                h4 {
+                    @include title-m;
+                }
+
+                ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    row-gap: 10px;
+                    justify-content: space-between;
+
+                    width: 250px;
+                    background-color: map-get($color, astronaut-50);
+
+                    padding: 30px 20px;
+
+                    li {
+                        position: relative;
+                        padding-left: 20px;
+                        /* 為圓點騰出空間 */
+                    }
+
+                    li::before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 10px;
+                        height: 10px;
+                        background-color: map-get($color, astronaut-main);
+                        border-radius: 50%;
+                    }
+                }
+            }
+        }
+
+        .container:nth-child(odd) {
+            flex-direction: row-reverse;
+
+            .content {
+                margin-right: 0;
+                margin-left: 80px;
+            }
+        }
+    }
+
+    .cta {
+        position: relative;
+        margin-top: 80px;
+        margin-bottom: 20px;
+
+        a {
+            width: fit-content;
+            margin: 0 auto;
+            @include btn-general(map-get($font-size-button, m), map-get($color, carrot-main), map-get($color, carrot-400));
+        }
+
+        .stair {
+            position: absolute;
+            z-index: 2;
+            left: 50%;
+            bottom: 45px;
+            transform: translateX(-50%);
         }
     }
 }
