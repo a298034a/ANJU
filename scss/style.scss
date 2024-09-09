@@ -581,10 +581,10 @@ body {
                 position: relative;
                 padding-left: 25px;
                 margin-right: 20px;
-                
+
                 /* 間距 */
                 font-size: 16px;
-                
+
                 cursor: pointer;
             }
 
@@ -599,13 +599,13 @@ body {
                 height: 20px;
                 border-radius: 50%;
                 border: 1px solid map-get($color, concrete-300);
-                background-color:  map-get($color, concrete-100);
+                background-color: map-get($color, concrete-100);
                 box-shadow: $shadow-input-inner;
             }
 
             /* 當 radio 被選中時，自定義樣式 */
             input[type="radio"]:checked+.custom-radio::before {
-                background-color: map-get($color, astronaut-700);       
+                background-color: map-get($color, astronaut-700);
             }
 
             input[type="radio"]:checked+.custom-radio::after {
@@ -634,9 +634,28 @@ body {
             margin-top: 20px;
         }
 
-        button {            
+        button {
             border: none;
             @include btn-general(map-get($font-size-button, m), map-get($color, carrot-main), map-get($color, carrot-400));
+        }
+    }
+}
+
+#systemdescribe-page {
+    .systemdescribe-banner {
+        display: flex;
+        justify-content: center;
+
+        background-color: map-get($color, astronaut-main);
+
+        figure {
+            width: 35%;
+        }
+
+        .content{
+            display: flex;
+            flex-direction: column;      
+            align-items: center;
         }
     }
 }
