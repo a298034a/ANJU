@@ -29,7 +29,7 @@ function Nav() {
                 <ul>
                     <li><a href="#">包租代管</a></li>
                     <li><a href="#">裝修服務</a></li>
-                    <li><a href="./systemdescribe.html">系統介紹</a></li>
+                    <li><a href="./system-describe.html">系統介紹</a></li>
                     <li><a href="./login.html">登入註冊</a></li>
                     <li><a href="./consult.html">免費諮詢</a></li>
                 </ul>
