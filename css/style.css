@@ -1025,6 +1025,129 @@ body {
   transform: translateX(-50%);
 }
 
+#furnish-page .banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #FDFDFD;
+  background: linear-gradient(172deg, #304173 70%, transparent 70%, transparent 70%);
+  padding: 3%;
+  padding-bottom: 200px;
+}
+#furnish-page .banner .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+  width: 30%;
+}
+#furnish-page .banner .title h1 {
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+#furnish-page .banner .title a {
+  width: fit-content;
+  position: relative;
+  z-index: 1;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border-radius: 99px;
+  background-color: #F2911B;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+  color: #FDFDFD;
+  padding: 8px 24px;
+  overflow: hidden;
+}
+#furnish-page .banner .title a:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #f8ac27;
+  border-radius: 99px;
+  transition: all 0.3s ease;
+}
+#furnish-page .banner .title a:hover {
+  color: #fff;
+}
+#furnish-page .banner .title a:hover:after {
+  left: 0;
+  width: 100%;
+}
+#furnish-page .banner .title a:active {
+  top: 2px;
+}
+#furnish-page .banner .style-list {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+#furnish-page .banner .style-list .item {
+  position: relative;
+  width: 23%;
+  aspect-ratio: 15/28;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+#furnish-page .banner .style-list .item figure {
+  height: 105%;
+}
+#furnish-page .banner .style-list .item figure img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+#furnish-page .banner .style-list .item p {
+  position: absolute;
+  bottom: 0;
+  width: 105%;
+  font-size: 1.1rem;
+  font-weight: 500;
+  background-color: rgba(41, 41, 41, 0.9);
+  padding: 5%;
+  transition: transform 0.3s ease;
+  transform: translateY(100%);
+}
+#furnish-page .banner .style-list .item:hover {
+  transform: scale(1.1);
+}
+#furnish-page .banner .style-list .item:hover p {
+  transform: translateY(0);
+}
+#furnish-page .banner .style-list .item:nth-child(odd) {
+  margin-bottom: 40px;
+}
+#furnish-page .banner .style-list .item:nth-child(even) {
+  margin-top: 40px;
+}
+#furnish-page .banner::before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  width: 0;
+  height: 0;
+  bottom: 38px;
+  right: 0;
+  border-style: solid;
+  border-width: 0 100vw 35vh 0;
+  border-color: rgba(0, 0, 0, 0) #F2F6FC rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+}
+#furnish-page .case {
+  position: relative;
+  z-index: 1;
+  margin-top: -100px;
+}
+#furnish-page .case h2 {
+  font-size: 1.7rem;
+  font-weight: 500;
+  text-align: center;
+}
+
 footer {
   display: flex;
   justify-content: center;
