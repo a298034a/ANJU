@@ -705,7 +705,7 @@ body {
         overflow: hidden;
 
         h2 {
-            @include title-l;
+            @include title-xl;
         }
 
         .container {
@@ -769,7 +769,7 @@ body {
                     }
 
                     h3 {
-                        @include title-m;
+                        @include title-l;
                     }
                 }
             }
@@ -847,7 +847,7 @@ body {
         padding: 0 12% 3% 12%;
 
         h2 {
-            @include title-l;
+            @include title-xl;
             text-align: center;
             margin-bottom: 50px;
         }
@@ -1108,7 +1108,7 @@ body {
         }
 
         h2 {
-            @include title-l;
+            @include title-xl;
             text-align: center;
             color: map-get($color, white);
         }

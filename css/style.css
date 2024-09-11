@@ -329,7 +329,7 @@ body {
 }
 #performance h2 {
   margin: 0 auto;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   font-weight: 500;
 }
 #performance ul {
@@ -355,7 +355,7 @@ body {
 }
 #service h1 {
   margin: 0 auto;
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   font-weight: 500;
 }
 #service .item {
@@ -871,7 +871,7 @@ body {
   overflow: hidden;
 }
 #property-management-page .steps h2 {
-  font-size: 1.7rem;
+  font-size: 2.3rem;
   font-weight: 500;
 }
 #property-management-page .steps .container {
@@ -926,7 +926,7 @@ body {
   width: 260px;
 }
 #property-management-page .steps .container .item .content h3 {
-  font-size: 1.1rem;
+  font-size: 1.7rem;
   font-weight: 500;
 }
 #property-management-page .steps a {
@@ -1022,7 +1022,7 @@ body {
   padding: 0 12% 3% 12%;
 }
 #property-management-page .faq h2 {
-  font-size: 1.7rem;
+  font-size: 2.3rem;
   font-weight: 500;
   text-align: center;
   margin-bottom: 50px;
@@ -1242,7 +1242,7 @@ body {
   clip-path: polygon(0 50%, 100% 65%, 100% 100%, 0% 100%);
 }
 #systemdescribe-page .description h2 {
-  font-size: 1.7rem;
+  font-size: 2.3rem;
   font-weight: 500;
   text-align: center;
   color: #FDFDFD;
@@ -1475,7 +1475,7 @@ body {
   padding: 0 15%;
 }
 #furnish-page .case h2 {
-  font-size: 2.5rem;
+  font-size: 2.3rem;
   font-weight: 500;
   text-align: center;
   margin-bottom: 80px;
