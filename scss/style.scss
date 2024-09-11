@@ -261,6 +261,11 @@ body {
             flex-wrap: wrap;
         }
     }
+
+    @include mobile {
+        padding: 0 10%;
+        margin-bottom: 40px;
+    }
 }
 
 #service {
