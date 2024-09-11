@@ -1204,6 +1204,8 @@ body {
 }
 
 #furnish-page {
+    width: 100%;
+
     .banner {
         position: relative;
         display: flex;
@@ -1318,10 +1320,92 @@ body {
         position: relative;
         z-index: 1;
         margin-top: -100px;
+        padding: 0 15%;
 
         h2 {
-            @include title-l;
+            @include title-xl;
             text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .example {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 80px;
+
+            .room {
+                width: 50%;
+                border-radius: 10px;
+                overflow: hidden;
+
+                img {
+                    object-fit: cover;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: 30px;
+
+                width: 40%;
+
+                .title {
+                    display: flex;
+                    gap: 40px;
+
+                    figure {
+                        border-radius: 50%;
+                        overflow: hidden;
+
+                        img {
+                            object-fit: cover;
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+
+                    .text {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        gap: 10px;
+
+                        h2 {
+                            @include title-l;
+                            text-align: left;
+                        }
+
+                        p {
+                            @include title-m;
+                        }
+                    }
+                }
+
+                .comment-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    .comment {
+                        font-size: map-get($font-size-content, m);
+                        text-indent: 2rem;
+                    }
+                }
+            }
+        }
+
+        .example:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        a {
+            margin: 0 auto;
+            width: fit-content;
+            @include btn-general(map-get($font-size-button, m), map-get($color, saffron-main), map-get($color, saffron-200));
         }
     }
 }
