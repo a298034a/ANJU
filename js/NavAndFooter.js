@@ -27,7 +27,7 @@ function Nav() {
             </a>
             <div className="menu">
                 <ul>
-                    <li><a href="#">包租代管</a></li>
+                    <li><a href="./property-management.html">包租代管</a></li>
                     <li><a href="#">裝修服務</a></li>
                     <li><a href="./system-describe.html">系統介紹</a></li>
                     <li><a href="./login.html">登入註冊</a></li>

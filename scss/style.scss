@@ -18,7 +18,6 @@ body {
     text-underline-offset: -6px;
 }
 
-
 .custom-checkbox {
     display: flex;
     align-items: center;
@@ -649,6 +648,136 @@ body {
     }
 }
 
+#property-management-page {
+
+    .property-management-banner {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+
+        width: 100%;
+        height: calc(100vh - 70px);
+
+        .bg {
+            position: absolute;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+
+            background: {
+                image: url(../images/property-management/banner.jpg);
+                size: cover;
+                position: center;
+                repeat: no-repeat;
+            }
+
+            opacity: 0.3;
+        }
+
+        .logo {
+            width: 20%;
+            min-width: 300px;
+        }
+
+        h2 {
+            @include title-l;
+            color: map-get($color , white);
+            text-shadow: $shadow-text
+        }
+
+        a {
+            @include btn-general(map-get($font-size-button, l), map-get($color, carrot-main), map-get($color, carrot-400));
+        }
+    }
+
+    .steps {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        padding: 5% 10%;
+
+        h2 {
+            @include title-l;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 100px;
+
+            margin-top: 80px;
+
+            .item {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                width: 360px;
+
+                .stepNum {
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    width: 80px;
+                    height: 80px;
+
+                    padding-top: 7px;
+                    padding-left: 10px;
+                    margin-bottom: 18px;
+
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        z-index: -1;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+
+                        border-radius: 10px;
+                        border: 4px solid map-get($color, saffron-main);
+                        background-color: map-get($color, white );
+                        transform: rotate(45deg);
+                        transform-origin: center;
+                    }
+                }
+
+                .content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 40px;
+
+                    text-align: center;
+                    padding: 30px 40px;
+                    border-radius: 10px;
+                    border: 4px solid map-get($color, saffron-main);
+
+                    figure {
+                        width: 260px;
+                    }
+
+                    h3 {
+                        @include title-m;
+                    }
+                }
+            }
+        }
+
+        a {
+            margin-top: 70px;
+            @include btn-general(map-get($font-size-button, l), map-get($color, astronaut-main), map-get($color, astronaut-500));
+        }
+    }
+}
+
 #systemdescribe-page {
 
     .systemdescribe-banner {
@@ -769,7 +898,7 @@ body {
             top: 0;
             left: 0;
             border-style: solid;
-            border-width: 32vh 100vw 0 0;
+            border-width: 30vh 100vw 0 0;
             border-color: map-get($color, astronaut-main) transparent transparent transparent;
         }
 

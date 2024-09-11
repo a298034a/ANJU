@@ -21,17 +21,100 @@
     <script type="text/babel">
         const { useState, useEffect } = React;
 
+        function StepItem({ num, img, alt, title, content }) {
+            return (
+                <li className="item">
+                    <div className="stepNum">
+                        <p>Step {num}</p>
+                    </div>
+                    <div className="content">
+                        <figure>
+                            <img src={img} alt={alt} />
+                        </figure>
+                        <div className="text">
+                            <h3>{title}</h3>
+                            <p>{content}</p>
+                        </div>
+                    </div>
+                </li>
+            )
+        }
+
         function App() {
             return (
                 <>
                     <Nav />
-                    <main>
-                        
+                    <main id="property-management-page">
+                        <section className="property-management-banner">
+                            <div className="bg"></div>
+                            <figure className="logo">
+                                <img src="./images/index/logo-text.png" alt="安居代管" />
+                            </figure>
+                            <h2>“全方位包租代管，讓您更省心”</h2>
+                            <a href="./login.html">登入註冊</a>
+                        </section>
+                        <section className="steps">
+                            <h2 className="low-highlight">完整服務流程</h2>
+                            <ul className="container">
+                                {datas.map((data, index) => (
+                                    <StepItem
+                                        key={index}
+                                        num={index + 1}
+                                        img={data.img}
+                                        alt={data.alt}
+                                        title={data.title}
+                                        content={data.content}
+                                    />
+                                ))}
+                            </ul>
+                            <a href="./login.html">立即加入</a>
+                        </section>
+                        <section className="faq">
+                        </section>
                     </main>
                     <Footer />
                 </>
             )
         }
+
+        const datas = [
+            {
+                img: "./images/property-management/evaluate.png",
+                alt: "初次評估插圖",
+                title: "初次評估",
+                content: "我們會對您的房屋進行初步評估，了解現狀並提出提升建議。"
+            },
+            {
+                img: "./images/property-management/contract.png",
+                alt: "簽訂合約插圖",
+                title: "簽訂合約",
+                content: "與您簽訂正式的管理合約，確保服務條款透明明確，保障您的利益。"
+            },
+            {
+                img: "./images/property-management/furnish.png",
+                alt: "裝修與維護插圖",
+                title: "裝修與維護",
+                content: "透過裝修服務，提升物業價值，並定期進行維護和檢查。（可選）"
+            },
+            {
+                img: "./images/property-management/filter.png",
+                alt: "租客篩選插圖",
+                title: "租客篩選",
+                content: "根據您的需求，我們進行嚴格的租客篩選，確保選擇優質租客。"
+            },
+            {
+                img: "./images/property-management/rent.png",
+                alt: "租金管理插圖",
+                title: "租金管理",
+                content: "我們負責收取租金，並按時將租金支付給您，確保您的收益穩定。"
+            },
+            {
+                img: "./images/property-management/service.png",
+                alt: "客戶服務插圖",
+                title: "客戶服務",
+                content: "我們提供全天候客戶服務，處理租客問題和維修請求，讓您高枕無憂。"
+            }
+        ];
 
         ReactDOM.createRoot(document.getElementById('root')).render(<App />);
     </script>

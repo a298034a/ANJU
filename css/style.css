@@ -796,6 +796,172 @@ body {
   top: 2px;
 }
 
+#property-management-page .property-management-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+  height: calc(100vh - 70px);
+}
+#property-management-page .property-management-banner .bg {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/property-management/banner.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+}
+#property-management-page .property-management-banner .logo {
+  width: 20%;
+  min-width: 300px;
+}
+#property-management-page .property-management-banner h2 {
+  font-size: 1.7rem;
+  font-weight: 500;
+  color: #FDFDFD;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
+}
+#property-management-page .property-management-banner a {
+  position: relative;
+  z-index: 1;
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-radius: 99px;
+  background-color: #F2911B;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+  color: #FDFDFD;
+  padding: 8px 24px;
+  overflow: hidden;
+}
+#property-management-page .property-management-banner a:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #f8ac27;
+  border-radius: 99px;
+  transition: all 0.3s ease;
+}
+#property-management-page .property-management-banner a:hover {
+  color: #fff;
+}
+#property-management-page .property-management-banner a:hover:after {
+  left: 0;
+  width: 100%;
+}
+#property-management-page .property-management-banner a:active {
+  top: 2px;
+}
+#property-management-page .steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5% 10%;
+}
+#property-management-page .steps h2 {
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+#property-management-page .steps .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 80px;
+}
+#property-management-page .steps .container .item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 360px;
+}
+#property-management-page .steps .container .item .stepNum {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  padding-top: 7px;
+  padding-left: 10px;
+  margin-bottom: 18px;
+}
+#property-management-page .steps .container .item .stepNum:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: 4px solid #F2C438;
+  background-color: #FDFDFD;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
+#property-management-page .steps .container .item .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  text-align: center;
+  padding: 30px 40px;
+  border-radius: 10px;
+  border: 4px solid #F2C438;
+}
+#property-management-page .steps .container .item .content figure {
+  width: 260px;
+}
+#property-management-page .steps .container .item .content h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+#property-management-page .steps a {
+  margin-top: 70px;
+  position: relative;
+  z-index: 1;
+  font-size: 1.4rem;
+  font-weight: 500;
+  border-radius: 99px;
+  background-color: #304173;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+  color: #FDFDFD;
+  padding: 8px 24px;
+  overflow: hidden;
+}
+#property-management-page .steps a:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #5D89D4;
+  border-radius: 99px;
+  transition: all 0.3s ease;
+}
+#property-management-page .steps a:hover {
+  color: #fff;
+}
+#property-management-page .steps a:hover:after {
+  left: 0;
+  width: 100%;
+}
+#property-management-page .steps a:active {
+  top: 2px;
+}
+
 #systemdescribe-page .systemdescribe-banner {
   position: relative;
   display: flex;
@@ -899,7 +1065,7 @@ body {
   top: 0;
   left: 0;
   border-style: solid;
-  border-width: 32vh 100vw 0 0;
+  border-width: 30vh 100vw 0 0;
   border-color: #304173 transparent transparent transparent;
 }
 #systemdescribe-page .description::before {
