@@ -64,3 +64,15 @@
         top: 2px;
     }
 }
+
+@mixin pad {
+    @media (max-width:1025px) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media(max-width:430px) {
+        @content;
+    }
+}

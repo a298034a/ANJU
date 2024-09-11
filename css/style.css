@@ -212,14 +212,20 @@ body {
   background-position: top right;
   background-repeat: no-repeat;
 }
+@media (max-width: 430px) {
+  #index-banner {
+    background: none;
+  }
+}
 #index-banner .content {
   position: relative;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   width: 35%;
+  min-width: 400px;
   margin-top: 20%;
-  padding: 0 3.5%;
+  padding: 0 3%;
 }
 #index-banner .content::before {
   content: "";
@@ -332,20 +338,66 @@ body {
   font-size: 2.3rem;
   font-weight: 500;
 }
+@media (max-width: 430px) {
+  #performance h2 {
+    font-size: 1.7rem;
+    font-weight: 500;
+  }
+}
 #performance ul {
   display: flex;
   justify-content: space-between;
+  gap: 30px;
 }
 #performance ul .item {
+  display: flex;
+  flex-direction: column;
   width: 27%;
 }
 #performance ul .item figure {
-  padding: 0 55px;
+  padding: 0 12%;
 }
 #performance ul .item h3 {
   font-size: 1.7rem;
   font-weight: 500;
   margin-bottom: 10px;
+}
+@media (max-width: 1025px) {
+  #performance ul .item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+  }
+  #performance ul .item figure {
+    padding: 0 10px;
+    max-width: 200px;
+    flex: 1;
+  }
+  #performance ul .item div {
+    flex: 1;
+  }
+}
+@media (max-width: 430px) {
+  #performance ul .item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+@media (max-width: 1025px) {
+  #performance ul {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (max-width: 430px) {
+  #performance ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 #service {

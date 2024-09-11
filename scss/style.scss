@@ -127,6 +127,10 @@ body {
         repeat: no-repeat;
     }
 
+    @include mobile {
+        background: none;
+    }
+
     .content {
         position: relative;
         display: flex;
@@ -134,8 +138,9 @@ body {
         flex-wrap: wrap;
 
         width: 35%;
+        min-width: 400px;
         margin-top: 20%;
-        padding: 0 3.5%;
+        padding: 0 3%;
 
         &::before {
             content: "";
@@ -195,23 +200,65 @@ body {
     h2 {
         margin: 0 auto;
         @include title-xl;
+
+        @include mobile {
+            @include title-l;
+        }
     }
 
     ul {
         display: flex;
         justify-content: space-between;
+        gap: 30px;
 
         .item {
+            display: flex;
+            flex-direction: column;
             width: 27%;
 
             figure {
-                padding: 0 55px;
+                padding: 0 12%;
             }
 
             h3 {
                 @include title-l;
                 margin-bottom: 10px;
             }
+
+            @include pad {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                flex-direction: row;
+                width: 100%;
+
+                figure {
+                    padding: 0 10px;
+                    max-width: 200px;
+                    flex: 1;
+                }
+
+                div {
+                    flex: 1;
+                }
+            }
+
+            @include mobile {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @include pad {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @include mobile {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
         }
     }
 }
