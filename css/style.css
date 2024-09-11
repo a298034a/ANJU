@@ -59,6 +59,7 @@ body {
 .low-highlight {
   text-decoration: underline solid #F2C438 16px;
   text-underline-offset: -6px;
+  text-decoration-skip-ink: none;
 }
 
 .custom-checkbox {
@@ -796,7 +797,7 @@ body {
   top: 2px;
 }
 
-#property-management-page .property-management-banner {
+#property-management-page .banner {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -806,7 +807,7 @@ body {
   width: 100%;
   height: calc(100vh - 70px);
 }
-#property-management-page .property-management-banner .bg {
+#property-management-page .banner .bg {
   position: absolute;
   z-index: -1;
   width: 100%;
@@ -817,17 +818,17 @@ body {
   background-repeat: no-repeat;
   opacity: 0.3;
 }
-#property-management-page .property-management-banner .logo {
+#property-management-page .banner .logo {
   width: 20%;
   min-width: 300px;
 }
-#property-management-page .property-management-banner h2 {
+#property-management-page .banner h2 {
   font-size: 1.7rem;
   font-weight: 500;
   color: #FDFDFD;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
 }
-#property-management-page .property-management-banner a {
+#property-management-page .banner a {
   position: relative;
   z-index: 1;
   font-size: 1.4rem;
@@ -839,7 +840,7 @@ body {
   padding: 8px 24px;
   overflow: hidden;
 }
-#property-management-page .property-management-banner a:after {
+#property-management-page .banner a:after {
   position: absolute;
   content: "";
   width: 0;
@@ -851,21 +852,21 @@ body {
   border-radius: 99px;
   transition: all 0.3s ease;
 }
-#property-management-page .property-management-banner a:hover {
+#property-management-page .banner a:hover {
   color: #fff;
 }
-#property-management-page .property-management-banner a:hover:after {
+#property-management-page .banner a:hover:after {
   left: 0;
   width: 100%;
 }
-#property-management-page .property-management-banner a:active {
+#property-management-page .banner a:active {
   top: 2px;
 }
 #property-management-page .steps {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 5% 10%;
+  padding: 50px 10%;
 }
 #property-management-page .steps h2 {
   font-size: 1.7rem;
@@ -960,6 +961,111 @@ body {
 }
 #property-management-page .steps a:active {
   top: 2px;
+}
+#property-management-page .faq {
+  padding: 0 12% 3% 12%;
+}
+#property-management-page .faq h2 {
+  font-size: 1.7rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 50px;
+}
+#property-management-page .faq .accordion .accordion-item {
+  border-bottom: 1px solid #F2C438;
+}
+#property-management-page .faq .accordion button {
+  position: relative;
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 1rem;
+  color: #FDFDFD;
+  font-size: 1.1rem;
+  border: none;
+  background: #304173;
+  outline: none;
+  transition: all 0.3s ease;
+}
+#property-management-page .faq .accordion button:hover {
+  cursor: pointer;
+  color: #F2F6FC;
+  transform: scale(1.03);
+  background: #3f5db6;
+}
+#property-management-page .faq .accordion button:hover::after {
+  cursor: pointer;
+  color: #F2F6FC;
+  border: 1px solid #F2F6FC;
+}
+#property-management-page .faq .accordion button .accordion-title {
+  padding: 1em 1.5em 1em 0;
+}
+#property-management-page .faq .accordion button .icon {
+  display: inline-block;
+  position: absolute;
+  top: 18px;
+  right: 1rem;
+  width: 22px;
+  height: 22px;
+  border: 1px solid;
+  border-radius: 22px;
+}
+#property-management-page .faq .accordion button .icon::before {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 9px;
+  left: 5px;
+  width: 10px;
+  height: 2px;
+  background: currentColor;
+}
+#property-management-page .faq .accordion button .icon::after {
+  display: block;
+  position: absolute;
+  content: "";
+  top: 5px;
+  left: 9px;
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+}
+#property-management-page .faq .accordion button[aria-expanded=true] {
+  color: #F2F6FC;
+}
+#property-management-page .faq .accordion button[aria-expanded=true] .icon::after {
+  width: 0;
+}
+#property-management-page .faq .accordion button[aria-expanded=true] + .accordion-content {
+  opacity: 1;
+  max-height: 30rem;
+  transition: all 200ms linear;
+  will-change: opacity, max-height;
+}
+#property-management-page .faq .accordion .accordion-content {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 200ms linear, max-height 200ms linear;
+  will-change: opacity, max-height;
+}
+#property-management-page .faq .accordion .accordion-content p {
+  font-size: 1rem;
+  color: #292929;
+  line-height: 1.5rem;
+  margin: 2rem;
+}
+#property-management-page .faq .accordion .accordion-content p li {
+  margin-bottom: 0.5rem;
+}
+#property-management-page .faq .accordion .accordion-content p a {
+  display: inline;
+  color: #5D89D4;
+  border-bottom: 1px solid #5D89D4;
+}
+#property-management-page .faq .accordion .accordion-content p a:hover {
+  color: #A6C6EA;
 }
 
 #systemdescribe-page .systemdescribe-banner {

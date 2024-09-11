@@ -16,6 +16,7 @@ body {
 .low-highlight {
     text-decoration: underline solid map-get($color, saffron-main) 16px;
     text-underline-offset: -6px;
+    text-decoration-skip-ink: none;
 }
 
 .custom-checkbox {
@@ -650,7 +651,7 @@ body {
 
 #property-management-page {
 
-    .property-management-banner {
+    .banner {
         position: relative;
         display: flex;
         flex-direction: column;
@@ -698,7 +699,7 @@ body {
         flex-direction: column;
         align-items: center;
 
-        padding: 5% 10%;
+        padding: 50px 10%;
 
         h2 {
             @include title-l;
@@ -743,7 +744,7 @@ body {
 
                         border-radius: 10px;
                         border: 4px solid map-get($color, saffron-main);
-                        background-color: map-get($color, white );
+                        background-color: map-get($color, white);
                         transform: rotate(45deg);
                         transform-origin: center;
                     }
@@ -774,6 +775,132 @@ body {
         a {
             margin-top: 70px;
             @include btn-general(map-get($font-size-button, l), map-get($color, astronaut-main), map-get($color, astronaut-500));
+        }
+    }
+
+    .faq {
+        padding: 0 12% 3% 12%;
+
+        h2 {
+            @include title-l;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .accordion {
+            .accordion-item {
+                border-bottom: 1px solid map-get($color, saffron-main);
+            }
+
+            button {
+                position: relative;
+                display: block;
+                text-align: left;
+                width: 100%;
+                padding: 1rem;
+                color: map-get($color, white);
+                font-size: map-get($font-size-title, m);
+                border: none;
+                background: map-get($color, astronaut-main);
+                outline: none;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    cursor: pointer;
+                    color: map-get($color, astronaut-50);
+                    transform: scale(1.03);
+                    background: map-get($color, astronaut-700);
+
+                    &::after {
+                        cursor: pointer;
+                        color: map-get($color, astronaut-50);
+                        border: 1px solid map-get($color, astronaut-50);
+                    }
+                }
+
+                .accordion-title {
+                    padding: 1em 1.5em 1em 0;
+                }
+
+                .icon {
+                    display: inline-block;
+                    position: absolute;
+                    top: 18px;
+                    right: 1rem;
+                    width: 22px;
+                    height: 22px;
+                    border: 1px solid;
+                    border-radius: 22px;
+
+                    &::before {
+                        display: block;
+                        position: absolute;
+                        content: '';
+                        top: 9px;
+                        left: 5px;
+                        width: 10px;
+                        height: 2px;
+                        background: currentColor;
+                    }
+
+                    &::after {
+                        display: block;
+                        position: absolute;
+                        content: '';
+                        top: 5px;
+                        left: 9px;
+                        width: 2px;
+                        height: 10px;
+                        background: currentColor;
+                    }
+                }
+            }
+
+            button[aria-expanded='true'] {
+                color: map-get($color, astronaut-50);
+
+                .icon {
+                    &::after {
+                        width: 0;
+                    }
+                }
+
+                +.accordion-content {
+                    opacity: 1;
+                    max-height: 30rem;
+                    transition: all 200ms linear;
+                    will-change: opacity, max-height;
+                }
+            }
+
+            .accordion-content {
+                opacity: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: opacity 200ms linear, max-height 200ms linear;
+                will-change: opacity, max-height;
+
+                p {
+                    font-size: map-get($font-size-content, m);
+                    color: map-get($color, concrete-950);
+                    line-height: 1.5rem;
+                    margin: 2rem;
+
+                    li {
+                        margin-bottom: 0.5rem;
+                    }
+
+                    a {
+                        display: inline;
+                        color: map-get($color, astronaut-500);
+                        border-bottom: 1px solid map-get($color, astronaut-500);
+
+                        &:hover {
+                            color: map-get($color, astronaut-300);
+                        }
+                    }
+                }
+            }
         }
     }
 }

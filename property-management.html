@@ -40,12 +40,37 @@
             )
         }
 
+        function AccordionItem({ title, content, isExpanded, onClick, id }) {
+            return (
+                <div className="accordion-item">
+                    <button
+                        id={`accordion-button-${id}`}
+                        aria-expanded={isExpanded ? 'true' : 'false'}
+                        onClick={onClick}
+                        className={isExpanded ? 'active' : ''} // 動態添加 'active' 類名
+                    >
+                        <span className="accordion-title">{title}</span>
+                        <span className="icon" aria-hidden="true"></span>
+                    </button>
+                    <div className={`accordion-content ${isExpanded ? 'expanded' : ''}`}>
+                        <p dangerouslySetInnerHTML={{ __html: content }} />
+                    </div>
+                </div>
+            );
+        }
+
         function App() {
+            const [expandedItem, setExpandedItem] = useState(null);
+
+            const toggleAccordion = (id) => {
+                setExpandedItem((prev) => (prev === id ? null : id));
+            };
+
             return (
                 <>
                     <Nav />
                     <main id="property-management-page">
-                        <section className="property-management-banner">
+                        <section className="banner">
                             <div className="bg"></div>
                             <figure className="logo">
                                 <img src="./images/index/logo-text.png" alt="安居代管" />
@@ -70,8 +95,21 @@
                             <a href="./login.html">立即加入</a>
                         </section>
                         <section className="faq">
+                            <h2 className="low-highlight">常見問題解答(FAQ)</h2>
+                            <div className="accordion">
+                                {accordionData.map((item) => (
+                                    <AccordionItem
+                                        key={item.id}
+                                        id={item.id}
+                                        title={item.title}
+                                        content={item.content}
+                                        isExpanded={expandedItem === item.id}
+                                        onClick={() => toggleAccordion(item.id)}
+                                    />
+                                ))}
+                            </div>
                         </section>
-                    </main>
+                    </main >
                     <Footer />
                 </>
             )
@@ -113,6 +151,30 @@
                 alt: "客戶服務插圖",
                 title: "客戶服務",
                 content: "我們提供全天候客戶服務，處理租客問題和維修請求，讓您高枕無憂。"
+            }
+        ];
+
+        const accordionData = [
+            {
+                id: 1,
+                title: '代管期間，我該如何得知房屋的狀態？',
+                content:
+                    '我們的<a href="./system-describe.html">管理系統</a>讓您可以隨時檢視房屋的狀態。透過我們的線上平台和手機應用，您可以查看房屋的維修記錄、租客反饋、租金支付情況等實時數據，確保您的物業管理一目了然。'
+            },
+            {
+                id: 2,
+                title: '租客篩選的流程是什麼？',
+                content: '我們的租客篩選流程包含以下幾個步驟：<br/><br/><ul><li>1. <strong>租客資料審核</strong>：租客提交租賃申請後，我們會仔細審查其個人資料、收入證明及工作背景。</li><li>2. <strong>信用查核</strong>：我們將通過第三方機構進行租客的信用評分查核，以確認其信譽良好並具備按時繳租的能力。</li><li>3. <strong>聯絡人核實</strong>：我們會聯繫租客提供的推薦人或前房東，確認租客過去的租賃紀錄和租期表現。</li><li>4. <strong>面談溝通</strong>：我們將與租客進行面談，了解其需求和期望，並進一步確認租賃細節。</li><li>5. <strong>最終決定</strong>：經過以上步驟，我們會綜合考量租客的各項資料，篩選出合適的租客。</li></ul><br/>這樣的流程可確保我們選出的租客是可靠且值得信賴的，保障您的權益。'
+            },
+            {
+                id: 3,
+                title: '如果租客不按時支付租金怎麼辦？',
+                content: '如果租客未能按時支付租金，我們會按照以下流程處理：<br/><br/><ul><li>1. <strong>提醒通知</strong>：首先，我們會立即發送提醒通知給租客，告知其租金已逾期，並要求儘快支付。提醒通知會通過簡訊、電子郵件及電話等多種方式聯繫租客。</li><li>2. <strong>協商解決</strong>：如果租客有特殊情況無法按時繳納租金，我們將與租客進行溝通，協商出合理的解決方案，確保租金能夠盡快到位。</li><li>3. <strong>違約處理</strong>：如租客長期拖欠租金且無法達成解決方案，我們會啟動租賃合約中的違約處理條款，可能包括追討租金、解除租賃合約或法律訴訟等措施，具體情況將依據合約進行。</li><li>4. <strong>法律支援</strong>：我們的專業團隊會全程協助房東處理相關法律事務，確保房東的權益能夠得到保護。</li></ul><br/>我們致力於維護您的權利，並將不按時支付租金的風險降至最低。'
+            },
+            {
+                id: 4,
+                title: '包租代管服務的費用結構是怎麼樣的？',
+                content: '<ul><li><strong>管理費</strong>：我們會根據房屋的租金收入收取一定比例的管理費，用以涵蓋租賃管理、租客篩選、租金催繳等日常服務。</li><li><strong>維修費用</strong>：租賃期間的房屋維修及保養費用會根據實際情況收取，我們會事先與房東協商，確保透明合理。</li><li><strong>裝修費用</strong>：如果房東希望進行房屋裝修以提升租賃價值，我們可以提供專業的裝修服務，並根據具體裝修項目收取費用。</li><li><strong>其他費用</strong>：針對特殊需求，如租賃保險或法律支援服務，我們也會根據實際需求提供額外的服務及收費項目。</li></ul>'
             }
         ];
 
