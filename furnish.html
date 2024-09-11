@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安居代管 ANJU 裝修服務</title>
+    <link rel="icon" href="./favicon.ico">
+    <link rel="stylesheet" href="./css/style.min.css">
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel" src="./js/NavAndFooter.js"></script>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState, useEffect } = React;
+
+        function StyleItem({ name, img, alt }) {
+            return (
+                <>
+                    <li className="item">
+                        <figure>
+                            <img src={img} alt={alt} />
+                        </figure>
+                        <p>{name}</p>
+                    </li>
+                </>
+            )
+        }
+
+        function App() {
+            return (
+                <>
+                    <Nav />
+                    <main id="furnish-page">
+                        <section className="banner">
+                            <div className="title">
+                                <h1>多元風格選擇<br />提升物業價值與吸引力</h1>
+                                <a href="./consult.html">免費諮詢</a>
+                            </div>
+                            <ul className="style-list">
+                                <StyleItem name="工業風" img="./images/furnish/modern-industrial-room.jpg" alt="工業風格裝潢範例" />
+                                <StyleItem name="奶油風" img="./images/furnish/butter.jpg" alt="奶油風格裝潢範例" />
+                                <StyleItem name="Loft風" img="./images/furnish/loft-style-room.jpg" alt="Loft風格裝潢範例" />
+                                <StyleItem name="簡約風" img="./images/furnish/less.jpg" alt="簡約風格裝潢範例" />
+                            </ul>
+                        </section>
+                        <section className="case">
+                            <h2 className="low-highlight">見證轉變</h2>
+                        </section>
+                    </main>
+                    <Footer />
+                </>
+            )
+        }
+
+        ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+    </script>
+</body>
+
+</html>
