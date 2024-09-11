@@ -863,10 +863,12 @@ body {
   top: 2px;
 }
 #property-management-page .steps {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 50px 10%;
+  overflow: hidden;
 }
 #property-management-page .steps h2 {
   font-size: 1.7rem;
@@ -961,6 +963,60 @@ body {
 }
 #property-management-page .steps a:active {
   top: 2px;
+}
+#property-management-page .steps .decorate1 {
+  position: absolute;
+  top: 185px;
+  width: 60px;
+  height: 60px;
+  background-size: contain;
+}
+#property-management-page .steps .decorate1.l {
+  left: 0;
+  background-image: url(../images/property-management/rectangle1.svg);
+}
+#property-management-page .steps .decorate1.l::after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  top: 50%;
+  left: 100%;
+  width: calc(100vw - 70px);
+  height: 5px;
+  background-color: #304173;
+  transform: translateY(-50%) translateX(-1%);
+  /* 垂直居中 */
+}
+#property-management-page .steps .decorate1.r {
+  right: 0;
+  background-image: url(../images/property-management/rectangle2.svg);
+}
+#property-management-page .steps .decorate2 {
+  position: absolute;
+  bottom: 637px;
+  width: 60px;
+  height: 60px;
+  background-size: contain;
+}
+#property-management-page .steps .decorate2.l {
+  left: 0;
+  background-image: url(../images/property-management/rectangle2.svg);
+}
+#property-management-page .steps .decorate2.l::after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  top: 50%;
+  left: 100%;
+  width: calc(100vw - 70px);
+  height: 5px;
+  background-color: #304173;
+  transform: translateY(-50%) translateX(-1%);
+  /* 垂直居中 */
+}
+#property-management-page .steps .decorate2.r {
+  right: 0;
+  background-image: url(../images/property-management/rectangle1.svg);
 }
 #property-management-page .faq {
   padding: 0 12% 3% 12%;

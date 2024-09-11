@@ -695,11 +695,14 @@ body {
     }
 
     .steps {
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
 
         padding: 50px 10%;
+
+        overflow: hidden;
 
         h2 {
             @include title-l;
@@ -775,6 +778,68 @@ body {
         a {
             margin-top: 70px;
             @include btn-general(map-get($font-size-button, l), map-get($color, astronaut-main), map-get($color, astronaut-500));
+        }
+
+        .decorate1 {
+            position: absolute;
+            top: 185px;
+            width: 60px;
+            height: 60px;
+            background-size: contain;
+
+            &.l {
+                left: 0;
+                background-image: url(../images/property-management/rectangle1.svg);
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    z-index: -2;
+                    top: 50%;
+                    left: 100%;
+                    width: calc(100vw - 70px);
+                    height: 5px;
+                    background-color: map-get($color, astronaut-main);
+                    transform: translateY(-50%) translateX(-1%);
+                    /* 垂直居中 */
+                }
+            }
+
+            &.r {
+                right: 0;
+                background-image: url(../images/property-management/rectangle2.svg);
+            }
+        }
+
+        .decorate2 {
+            position: absolute;
+            bottom: 637px;
+            width: 60px;
+            height: 60px;
+            background-size: contain;
+
+            &.l {
+                left: 0;
+                background-image: url(../images/property-management/rectangle2.svg);
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    z-index: -2;
+                    top: 50%;
+                    left: 100%;
+                    width: calc(100vw - 70px);
+                    height: 5px;
+                    background-color: map-get($color, astronaut-main);
+                    transform: translateY(-50%) translateX(-1%);
+                    /* 垂直居中 */
+                }
+            }
+
+            &.r {
+                right: 0;
+                background-image: url(../images/property-management/rectangle1.svg);
+            }
         }
     }
 
