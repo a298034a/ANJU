@@ -1298,7 +1298,7 @@ body {
 }
 #property-management-page .faq .accordion button[aria-expanded=true] + .accordion-content {
   opacity: 1;
-  max-height: 30rem;
+  max-height: 50rem;
   transition: all 200ms linear;
   will-change: opacity, max-height;
 }
@@ -1325,6 +1325,11 @@ body {
 }
 #property-management-page .faq .accordion .accordion-content p a:hover {
   color: #A6C6EA;
+}
+@media (max-width: 1025px) {
+  #property-management-page .faq {
+    padding: 0 6% 3% 6%;
+  }
 }
 
 #systemdescribe-page .systemdescribe-banner {

@@ -85,7 +85,7 @@ body {
         }
     }
 
-    .pad-menu{
+    .pad-menu {
         display: none;
     }
 
@@ -178,7 +178,7 @@ body {
                 }
             }
 
-            &.active {                
+            &.active {
                 clip-path: circle(140% at 96.5% 4%);
                 transition: all 0.7s cubic-bezier(0.23, 0.93, 0.23, 0.93);
 
@@ -471,7 +471,7 @@ body {
             }
         }
 
-        @include pad{
+        @include pad {
             margin-top: 7%;
         }
     }
@@ -1152,7 +1152,7 @@ body {
 
                 +.accordion-content {
                     opacity: 1;
-                    max-height: 30rem;
+                    max-height: 50rem;
                     transition: all 200ms linear;
                     will-change: opacity, max-height;
                 }
@@ -1186,6 +1186,10 @@ body {
                     }
                 }
             }
+        }
+
+        @include pad {
+            padding: 0 6% 3% 6%;
         }
     }
 }
