@@ -85,6 +85,10 @@ body {
         }
     }
 
+    .pad-menu{
+        display: none;
+    }
+
     @include pad {
         padding: 10px 5%;
 
@@ -106,6 +110,7 @@ body {
         }
 
         .pad-menu {
+            display: block;
             clip-path: circle(0% at 96.5% 4%);
             position: absolute;
             z-index: 999;
@@ -173,7 +178,7 @@ body {
                 }
             }
 
-            &.active {
+            &.active {                
                 clip-path: circle(140% at 96.5% 4%);
                 transition: all 0.7s cubic-bezier(0.23, 0.93, 0.23, 0.93);
 
@@ -445,9 +450,31 @@ body {
                     border-radius: 10px;
                 }
             }
+
+            @include pad {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+
+                padding: 5%;
+
+                .content {
+                    width: 100%;
+                    margin: 0;
+                    padding: 0 5px;
+                }
+
+                figure {
+                    padding: 0;
+                    margin: 0;
+                }
+            }
+        }
+
+        @include pad{
+            margin-top: 7%;
         }
     }
-
 
     .item:nth-child(even) {
         flex-direction: row-reverse;
@@ -471,6 +498,25 @@ body {
             figure {
                 margin-right: 0;
                 margin-left: 8%;
+            }
+
+            @include pad {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+
+                padding: 5%;
+
+                .content {
+                    width: 100%;
+                    margin: 0;
+                    padding: 0 5px;
+                }
+
+                figure {
+                    padding: 0;
+                    margin: 0;
+                }
             }
         }
     }
