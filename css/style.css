@@ -119,6 +119,103 @@ body {
   width: 100%;
   height: 100%;
 }
+@media (max-width: 1025px) {
+  #topbar {
+    padding: 10px 5%;
+  }
+  #topbar .hambergur {
+    width: 1.6rem;
+  }
+  #topbar .hambergur div {
+    width: 1.6rem;
+    height: 2px;
+    border: 1px solid #304173;
+    margin-bottom: 5px;
+    border-radius: 5px;
+  }
+  #topbar .hambergur div:nth-child(2) {
+    width: 1.3rem;
+    background: #304173;
+  }
+  #topbar .pad-menu {
+    clip-path: circle(0% at 96.5% 4%);
+    position: absolute;
+    z-index: 999;
+    background: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    transition: all 0.5s cubic-bezier(0.23, 0.93, 0.23, 0.93);
+  }
+  #topbar .pad-menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+  }
+  #topbar .pad-menu ul li {
+    padding: 1rem;
+  }
+  #topbar .pad-menu ul li a {
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: #FDFDFD;
+  }
+  #topbar .pad-menu ul li:nth-child(1) a,
+  #topbar .pad-menu ul li:nth-child(2) a {
+    background: -webkit-linear-gradient(45deg, #D66709 0%, #F2911B 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  #topbar .pad-menu .close {
+    position: absolute;
+    top: 1.3rem;
+    right: 2.355rem;
+    width: 2rem;
+    height: 2rem;
+    transform: rotate(45deg);
+  }
+  #topbar .pad-menu .close div {
+    width: 32px;
+    height: 32px;
+    overflow: hidden;
+  }
+  #topbar .pad-menu .close div:before, #topbar .pad-menu .close div:after {
+    content: "";
+    width: 2rem;
+    height: 2px;
+    border: 1px solid #F2911B;
+    position: absolute;
+    border-radius: 5px;
+  }
+  #topbar .pad-menu .close div:after {
+    transform: rotate(90deg);
+    background: #F2911B;
+  }
+  #topbar .pad-menu.active {
+    clip-path: circle(140% at 96.5% 4%);
+    transition: all 0.7s cubic-bezier(0.23, 0.93, 0.23, 0.93);
+  }
+  #topbar .pad-menu.active ul > li {
+    animation: animateIn 360ms ease-in-out calc(var(--animation-order) * 100ms) both;
+  }
+  #topbar .pad-menu.reverse_anim {
+    clip-path: circle(0% at 96.5% 4%);
+    opacity: 0.6;
+    transition: all 0.4s cubic-bezier(0.23, 0.93, 0.23, 0.93);
+  }
+  @keyframes animateIn {
+    0% {
+      opacity: 0;
+      transform: translateX(10px) rotate(2deg);
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
 #topbar .menu ul {
   display: flex;
   align-items: center;
@@ -202,6 +299,11 @@ body {
 }
 #topbar .menu ul li:nth-child(5) a:active {
   top: 2px;
+}
+@media (max-width: 1025px) {
+  #topbar .menu {
+    display: none;
+  }
 }
 
 #index-banner {

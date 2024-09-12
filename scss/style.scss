@@ -85,33 +85,155 @@ body {
         }
     }
 
-    .menu ul {
-        display: flex;
-        align-items: center;
-        gap: 0 30px;
+    @include pad {
+        padding: 10px 5%;
 
-        li {
-            a {
-                display: block;
-                font-size: map-get($font-size-button, m);
-                font-weight: 500;
+        .hambergur {
+            width: 1.6rem;
 
-                text-decoration: underline solid transparent 16px;
-                text-underline-offset: -6px;
+            div {
+                width: 1.6rem;
+                height: 2px;
+                border: 1px solid map-get($color, astronaut-main);
+                margin-bottom: 5px;
+                border-radius: 5px;
+
+                &:nth-child(2) {
+                    width: 1.3rem;
+                    background: map-get($color, astronaut-main);
+                }
             }
         }
 
-        li:nth-child(-n+3) a:hover {
-            text-decoration: underline solid map-get($color, saffron-main) 12px;
-            text-underline-offset: -6px;
+        .pad-menu {
+            clip-path: circle(0% at 96.5% 4%);
+            position: absolute;
+            z-index: 999;
+            background: rgba(0, 0, 0, 0.9);
+            width: 100%;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            transition: all 0.5s cubic-bezier(0.23, 0.93, 0.23, 0.93);
+
+            ul {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                height: 100vh;
+
+                li {
+                    padding: 1rem;
+
+                    a {
+                        @include title-l;
+                        color: map-get($color, white);
+
+                    }
+                }
+
+                li:nth-child(1) a,
+                li:nth-child(2) a {
+                    background: -webkit-linear-gradient(45deg,
+                            map-get($color, carrot-600) 0%,
+                            map-get($color, carrot-main) 100%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+
+            .close {
+                position: absolute;
+                top: 1.3rem;
+                right: 2.355rem;
+                width: 2rem;
+                height: 2rem;
+                transform: rotate(45deg);
+
+                div {
+                    width: 32px;
+                    height: 32px;
+                    overflow: hidden;
+
+                    &:before,
+                    &:after {
+                        content: "";
+                        width: 2rem;
+                        height: 2px;
+                        border: 1px solid map-get($color, carrot-main);
+                        position: absolute;
+                        border-radius: 5px;
+                    }
+
+                    &:after {
+                        transform: rotate(90deg);
+                        background: map-get($color, carrot-main);
+                    }
+                }
+            }
+
+            &.active {
+                clip-path: circle(140% at 96.5% 4%);
+                transition: all 0.7s cubic-bezier(0.23, 0.93, 0.23, 0.93);
+
+                ul>li {
+                    animation: animateIn 360ms ease-in-out calc(var(--animation-order) * 100ms) both;
+                }
+            }
+
+            &.reverse_anim {
+                clip-path: circle(0% at 96.5% 4%);
+                opacity: 0.6;
+                transition: all 0.4s cubic-bezier(0.23, 0.93, 0.23, 0.93);
+            }
         }
 
-        li:nth-child(4) a {
-            @include btn-general(map-get($font-size-button, m), map-get($color, astronaut-main), map-get($color, astronaut-500));
+        @keyframes animateIn {
+            0% {
+                opacity: 0;
+                transform: translateX(10px) rotate(2deg);
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+    }
+
+    .menu {
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 0 30px;
+
+            li {
+                a {
+                    display: block;
+                    font-size: map-get($font-size-button, m);
+                    font-weight: 500;
+
+                    text-decoration: underline solid transparent 16px;
+                    text-underline-offset: -6px;
+                }
+            }
+
+            li:nth-child(-n+3) a:hover {
+                text-decoration: underline solid map-get($color, saffron-main) 12px;
+                text-underline-offset: -6px;
+            }
+
+            li:nth-child(4) a {
+                @include btn-general(map-get($font-size-button, m), map-get($color, astronaut-main), map-get($color, astronaut-500));
+            }
+
+            li:nth-child(5) a {
+                @include btn-general(map-get($font-size-button, m), map-get($color, carrot-main), map-get($color, carrot-400));
+            }
         }
 
-        li:nth-child(5) a {
-            @include btn-general(map-get($font-size-button, m), map-get($color, carrot-main), map-get($color, carrot-400));
+        @include pad {
+            display: none;
         }
     }
 }
