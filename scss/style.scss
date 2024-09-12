@@ -912,6 +912,12 @@ body {
         a {
             @include btn-general(map-get($font-size-button, l), map-get($color, carrot-main), map-get($color, carrot-400));
         }
+
+        @include mobile{
+            h2 {
+                font-size: 1.5rem;        
+            }
+        }
     }
 
     .steps {
@@ -925,7 +931,7 @@ body {
         overflow: hidden;
 
         h2 {
-            @include title-xl;
+            @include title-xl;            
         }
 
         .container {

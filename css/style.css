@@ -1065,6 +1065,11 @@ body {
 #property-management-page .banner a:active {
   top: 2px;
 }
+@media (max-width: 430px) {
+  #property-management-page .banner h2 {
+    font-size: 1.5rem;
+  }
+}
 #property-management-page .steps {
   position: relative;
   display: flex;
