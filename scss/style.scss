@@ -116,7 +116,7 @@ body {
             z-index: 999;
             background: rgba(0, 0, 0, 0.9);
             width: 100%;
-            height: 100vh;
+            height: 110vh;
             top: 0;
             left: 0;
             transition: all 0.5s cubic-bezier(0.23, 0.93, 0.23, 0.93);
@@ -618,6 +618,7 @@ body {
         }
 
         @include short {
+
             button,
             .custom-checkbox,
             input:not([type="checkbox"]) {
@@ -1245,9 +1246,21 @@ body {
 
         background-color: map-get($color, astronaut-main);
 
+        figure,
+        .content{
+            width: 35%;
+
+            @include pad{
+                width: 40%;
+            }
+
+            @include mobile{
+                width: 50%;
+            }
+        }
+
         figure {
             position: relative;
-            width: 35%;
             overflow: hidden;
 
             img {
@@ -1280,6 +1293,16 @@ body {
                 border-width: 0 18vw 10vh 0;
                 border-color: transparent map-get($color, astronaut-main) transparent transparent;
             }
+
+            @include pad {
+                &::after {
+                    border-width: 7vh 20vw 0 0;
+                }
+
+                &::before {
+                    border-width: 0 20vw 7vh 0;
+                }
+            }
         }
 
         .content {
@@ -1291,7 +1314,6 @@ body {
             justify-content: flex-end;
             gap: 30px;
 
-            width: 35%;
             padding: 5% 3%;
             text-align: center;
 
@@ -1331,6 +1353,25 @@ body {
                 border-width: 0 40vw 20vh 0;
                 border-color: transparent map-get($color, astronaut-main) transparent transparent;
             }
+
+
+            @include laptop {
+                padding: 5% 3%;
+                padding-top: 10%;
+
+                &::after {
+                    border-width: 10vh 40vw 0 0;
+                }
+
+                &::before {
+                    border-width: 0 40vw 10vh 0;
+                }
+            }
+
+            @include pad {
+                padding: 3%;
+                padding-top: 15%;
+            }
         }
 
         .stair {
@@ -1338,6 +1379,10 @@ body {
             z-index: 2;
             right: 20%;
             bottom: -120px;
+        }
+
+        @include laptop{
+            align-items: flex-end;
         }
     }
 

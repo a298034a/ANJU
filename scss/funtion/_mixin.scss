@@ -65,6 +65,12 @@
     }
 }
 
+@mixin laptop {
+    @media (max-width: 1440px) {
+        @content;
+    }
+}
+
 @mixin pad {
     @media (max-width:1025px) {
         @content;
