@@ -913,9 +913,9 @@ body {
             @include btn-general(map-get($font-size-button, l), map-get($color, carrot-main), map-get($color, carrot-400));
         }
 
-        @include mobile{
+        @include mobile {
             h2 {
-                font-size: 1.5rem;        
+                font-size: 1.5rem;
             }
         }
     }
@@ -931,7 +931,7 @@ body {
         overflow: hidden;
 
         h2 {
-            @include title-xl;            
+            @include title-xl;
         }
 
         .container {
@@ -997,6 +997,14 @@ body {
                     h3 {
                         @include title-l;
                     }
+
+                    @include mobile {
+                        padding: 30px;
+                    }
+                }
+
+                @include mobile {
+                    width: 330px;
                 }
             }
         }
@@ -1008,6 +1016,7 @@ body {
 
         .decorate1 {
             position: absolute;
+            z-index: -1;
             top: 185px;
             width: 60px;
             height: 60px;
@@ -1039,6 +1048,7 @@ body {
 
         .decorate2 {
             position: absolute;
+            z-index: -1;
             bottom: 637px;
             width: 60px;
             height: 60px;
@@ -1065,6 +1075,16 @@ body {
             &.r {
                 right: 0;
                 background-image: url(../images/property-management/rectangle1.svg);
+            }
+        }
+
+        @include mobile {
+            .decorate1 {
+                top: 200px;
+            }
+
+            .decorate2 {
+                bottom: 670px;
             }
         }
     }
@@ -1448,6 +1468,11 @@ body {
         padding: 3%;
         padding-bottom: 200px;
 
+        @include mobile{
+            padding: 20%;
+            padding-bottom: 200px;
+        }
+
         .title {
             display: flex;
             flex-direction: column;
@@ -1462,6 +1487,11 @@ body {
             a {
                 width: fit-content;
                 @include btn-general(map-get($font-size-button, m), map-get($color, carrot-main), map-get($color, carrot-400));
+            }
+
+            @include mobile {
+                width: 100%;
+                align-items: center;
             }
         }
 
@@ -1517,7 +1547,11 @@ body {
             .item:nth-child(even) {
                 margin-top: 40px;
             }
-        }
+
+            @include mobile {
+                display: none;
+            }
+        }        
 
         // &:after {
         //     content: "";
@@ -1552,10 +1586,25 @@ body {
         margin-top: -100px;
         padding: 0 15%;
 
+        @include pad {
+            padding: 0 8%;
+        }
+
         h2 {
             @include title-xl;
             text-align: center;
+
+            @include pad {
+                margin-bottom: 0;
+            }
+        }
+
+        h2.low-highlight {
             margin-bottom: 80px;
+
+            @include pad {
+                margin-bottom: 40px;
+            }
         }
 
         .example {
@@ -1573,6 +1622,10 @@ body {
                     width: 100%;
                     height: 100%;
                 }
+
+                @include pad {
+                    width: 100%;
+                }
             }
 
             .content {
@@ -1588,6 +1641,7 @@ body {
                     gap: 40px;
 
                     figure {
+                        aspect-ratio: 1/1;
                         border-radius: 50%;
                         overflow: hidden;
 
@@ -1612,6 +1666,21 @@ body {
                         p {
                             @include title-m;
                         }
+
+                        br {
+                            display: none;
+                        }
+
+                        @include pad {
+                            br {
+                                display: inline-block;
+                            }
+                        }
+                    }
+
+                    @include pad {
+                        flex-direction: row;
+                        align-items: center;
                     }
                 }
 
@@ -1625,6 +1694,18 @@ body {
                         text-indent: 2rem;
                     }
                 }
+
+                @include pad {
+                    width: 100%;
+
+                    .title {
+                        height: 100px;
+                    }
+                }
+            }
+
+            @include pad {
+                gap: 40px;
             }
         }
 
@@ -1636,6 +1717,17 @@ body {
             margin: 0 auto;
             width: fit-content;
             @include btn-general(map-get($font-size-button, m), map-get($color, saffron-main), map-get($color, saffron-200));
+        }
+
+        @include pad {
+            .example {
+                flex-direction: column;
+                margin-bottom: 40px;
+            }
+
+            .example:nth-child(odd) {
+                flex-direction: column;
+            }
         }
     }
 }
