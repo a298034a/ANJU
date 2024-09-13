@@ -69,9 +69,11 @@ function Nav() {
 }
 
 function Footer() {
+    const isAuthPage = window.location.pathname.includes('login.html') || window.location.pathname.includes('signup.html');
+
     return (
-        <footer>
+        <footer style={isAuthPage ? { position: 'fixed', bottom: 0, width: '100%' } : {}}>
             <p>Copyright © 2024 安居代管. 保留一切權利。</p>
         </footer>
-    )
+    );
 }

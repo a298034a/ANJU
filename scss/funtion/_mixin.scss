@@ -72,7 +72,13 @@
 }
 
 @mixin mobile {
-    @media(max-width:430px) {
+    @media(max-width:431px) {
+        @content;
+    }
+}
+
+@mixin short {
+    @media(max-height:670px) {
         @content;
     }
 }

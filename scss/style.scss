@@ -529,7 +529,7 @@ body {
 #login-page,
 #signup-page {
     display: flex;
-    height: calc(100vh - 160px);
+    height: calc(100vh - 75px);
 }
 
 .login-banner {
@@ -552,6 +552,7 @@ body {
 
     h2 {
         @include title-l;
+        text-align: center;
     }
 
     p {
@@ -559,14 +560,8 @@ body {
         text-align: center;
     }
 
-    &::after {
-        content: "";
-        position: absolute;
-        z-index: 1;
-        bottom: -80px;
-        width: 100%;
-        height: 80px;
-        background-color: map-get($color, astronaut-main);
+    @include pad {
+        display: none;
     }
 }
 
@@ -621,6 +616,14 @@ body {
         .custom-checkbox {
             margin-bottom: 25px;
         }
+
+        @include short {
+            button,
+            .custom-checkbox,
+            input:not([type="checkbox"]) {
+                margin-bottom: 15px;
+            }
+        }
     }
 
     a {
@@ -631,6 +634,19 @@ body {
         &:hover {
             color: map-get($color, astronaut-300);
         }
+    }
+
+    @include pad {
+        width: 60%;
+    }
+
+    @include mobile {
+        width: 70%;
+    }
+
+    @include short {
+        margin: 20px auto;
+        width: 60%;
     }
 }
 
@@ -1468,7 +1484,7 @@ body {
         padding: 3%;
         padding-bottom: 200px;
 
-        @include mobile{
+        @include mobile {
             padding: 20%;
             padding-bottom: 200px;
         }
@@ -1551,7 +1567,7 @@ body {
             @include mobile {
                 display: none;
             }
-        }        
+        }
 
         // &:after {
         //     content: "";
@@ -1733,6 +1749,7 @@ body {
 }
 
 footer {
+    z-index: -1;
     display: flex;
     justify-content: center;
     align-items: center;
