@@ -665,6 +665,9 @@ body {
         gap: 20px;
 
         width: 100%;
+        padding: 0 10%;
+
+        text-align: center;
 
         &::after {
             content: "";
@@ -695,11 +698,14 @@ body {
             margin-left: 10px;
             width: 7%;
             min-width: 100px;
+
+            @include pad {
+                margin-top: 8%;
+            }
         }
 
         h2 {
             @include title-l;
-            text-align: center;
         }
     }
 
@@ -709,12 +715,34 @@ body {
 
         margin: 70px 0;
 
+        @include pad {
+            width: 70%;
+            min-width: 400px;
+        }
+
+        @include mobile {
+            width: 80%;
+            min-width: 300px;
+            margin: 30px 0;
+        }
+
         .form-group {
             display: flex;
             justify-content: space-between;
             align-items: center;
 
             border-bottom: 1px solid map-get($color, concrete-400);
+
+            @include mobile {
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: start;
+
+                >label,
+                .empty {
+                    padding-top: 25px;
+                }
+            }
 
             label,
             .empty {
@@ -801,6 +829,7 @@ body {
                 .custom-checkbox span {
                     width: 25px;
                     height: 25px;
+                    flex-shrink: 0;
                 }
             }
 
@@ -848,6 +877,10 @@ body {
                 box-shadow: $shadow-input-inner;
             }
 
+            .custom-radio:last-child {
+                margin-right: 0;
+            }
+
             /* 當 radio 被選中時，自定義樣式 */
             input[type="radio"]:checked+.custom-radio::before {
                 background-color: map-get($color, astronaut-700);
@@ -870,6 +903,12 @@ body {
 
         .form-group:nth-last-child(2) {
             border: none;
+
+            @include mobile {
+                .input-wraper {
+                    padding-top: 0;
+                }
+            }
         }
 
         .button-wrapper {
@@ -882,6 +921,7 @@ body {
         button {
             border: none;
             @include btn-general(map-get($font-size-button, m), map-get($color, carrot-main), map-get($color, carrot-400));
+            font-weight: 600;
         }
     }
 }
@@ -1393,7 +1433,7 @@ body {
             z-index: 2;
             right: 20%;
             bottom: -120px;
-            
+
             @include pad {
                 display: none;
             }
