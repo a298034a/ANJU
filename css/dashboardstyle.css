@@ -47,6 +47,20 @@ a {
   color: var(--deep);
 }
 
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  color: #292929;
+  letter-spacing: 0.05rem;
+  background-color: #F2F2F2;
+}
+
+.card {
+  padding: 20px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  background-color: white;
+}
+
 #dashboard-nav {
   width: 270px;
   height: 100vh;
@@ -160,4 +174,97 @@ a {
   background-color: #FDFDFD;
   mask: url("../images/navbar/logout.svg") no-repeat center/contain;
   -webkit-mask: url("../images/navbar/logout.svg") no-repeat center/contain;
+}
+
+#dashboard-page {
+  display: flex;
+}
+#dashboard-page .container {
+  padding: 20px;
+}
+
+#occupancy-rate {
+  width: 390px;
+}
+#occupancy-rate h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+#occupancy-rate .occupancy-rate-chart {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 20px;
+  width: 100%;
+  max-width: 350px;
+}
+#occupancy-rate .occupancy-rate-chart table {
+  position: relative;
+  width: 60%;
+  color: #FDFDFD;
+  /* 使用遮罩來控制顯示區域 */
+  animation: sector 0.3s ease-out forwards;
+  /* 動畫 */
+}
+#occupancy-rate .occupancy-rate-chart table::before {
+  position: absolute;
+  content: "";
+  z-index: 1;
+  top: 17.5%;
+  left: 19%;
+  width: 65%;
+  height: 65%;
+  border-radius: 50%;
+  background-color: #FDFDFD;
+}
+#occupancy-rate .occupancy-rate-chart ul {
+  border: none;
+  width: 40%;
+  padding-right: 0;
+}
+#occupancy-rate .occupancy-rate-chart ul .data {
+  color: #FDFDFD;
+}
+#occupancy-rate .occupancy-rate-chart ul li::before {
+  border-radius: 50%;
+  border-width: 8px;
+}
+#occupancy-rate .occupancy-rate-chart ul li:nth-child(1):before {
+  border-color: #304173;
+}
+#occupancy-rate .occupancy-rate-chart ul li:nth-child(2):before {
+  border-color: #DCDCDC;
+}
+#occupancy-rate .occupancy-rate-chart ul li:nth-child(3):before {
+  border-color: #F2C438;
+}
+
+/* 動畫：逐漸顯示圓餅圖 */
+@keyframes sector {
+  from {
+    clip-path: polygon(50% 50%, 0% 0%, 0% 0%);
+  }
+  25% {
+    clip-path: polygon(50% 50%, 0% 0%, 100% 0%);
+  }
+  25.000001% {
+    clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 0%);
+  }
+  50% {
+    clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%);
+  }
+  50.000001% {
+    clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 100% 100%);
+  }
+  75% {
+    clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+  75.000001% {
+    clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 100%);
+  }
+  to {
+    clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+  }
 }/*# sourceMappingURL=dashboardstyle.css.map */

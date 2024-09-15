@@ -3,6 +3,21 @@
 @import 'reset';
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Noto+Sans+TC:wght@100..900&display=swap');
 
+body {
+    font-family: $font-family-tc;
+    color: map-get($color, concrete-950);
+    letter-spacing: 0.05rem;
+
+    background-color: map-get($color, concrete-100);
+}
+
+.card {
+    padding: 20px;
+    box-shadow: $shadow-black-10;
+    border-radius: 10px;
+    background-color: white;
+}
+
 #dashboard-nav {
     width: 270px;
     height: 100vh;
@@ -109,5 +124,116 @@
         .logout {
             @include icon-mask('../images/navbar/logout.svg');
         }
+    }
+}
+
+#dashboard-page {
+    display: flex;
+
+    .container {
+        padding: 20px;
+    }
+}
+
+#occupancy-rate {
+    width: 390px;
+
+    h2 {
+        @include title-m;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .occupancy-rate-chart {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 20px;
+        width: 100%;
+        max-width: 350px;
+
+        table {
+            position: relative;
+            width: 60%;
+            color: map-get($color , white);
+
+            /* 使用遮罩來控制顯示區域 */
+            animation: sector 0.3s ease-out forwards;
+            /* 動畫 */
+
+            &::before {
+                position: absolute;
+                content: "";
+                z-index: 1;
+                top: 17.5%;
+                left: 19%;
+                width: 65%;
+                height: 65%;
+                border-radius: 50%;
+                background-color: map-get($color, white);
+            }
+        }
+
+        ul {
+            border: none;
+            width: 40%;
+            padding-right: 0;
+
+            .data {
+                color: map-get($color, white);
+            }
+
+            li::before {
+                border-radius: 50%;
+                border-width: 8px;
+            }
+
+            li:nth-child(1):before {
+                border-color: map-get($color, astronaut-main);
+            }
+
+            li:nth-child(2):before {
+                border-color: map-get($color, concrete-200);
+            }
+
+            li:nth-child(3):before {
+                border-color: map-get($color, saffron-main);
+            }
+        }
+    }
+}
+
+/* 動畫：逐漸顯示圓餅圖 */
+@keyframes sector {
+    from {
+        clip-path: polygon(50% 50%, 0% 0%, 0% 0%);
+    }
+
+    25% {
+        clip-path: polygon(50% 50%, 0% 0%, 100% 0%);
+    }
+
+    25.000001% {
+        clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 0%);
+    }
+
+    50% {
+        clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%);
+    }
+
+    50.000001% {
+        clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 100% 100%);
+    }
+
+    75% {
+        clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+
+    75.000001% {
+        clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 100%);
+    }
+
+    to {
+        clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
     }
 }
