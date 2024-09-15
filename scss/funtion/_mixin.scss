@@ -1,5 +1,10 @@
 @use '../variables/' as *;
 
+@mixin title-s {
+    font-size: map-get($font-size-title, s);
+    font-weight: 600;
+}
+
 @mixin title-m {
     font-size: map-get($font-size-title, m);
     font-weight: 500;
@@ -87,4 +92,12 @@
     @media(max-height:670px) {
         @content;
     }
+}
+
+@mixin icon-mask($iconPath) {
+    width: 35px;
+    height: 35px;
+    background-color: map-get($color, white);
+    mask: url($iconPath) no-repeat center / contain;
+    -webkit-mask: url($iconPath) no-repeat center / contain;
 }

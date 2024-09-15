@@ -1,0 +1,113 @@
+@use 'variables' as *;
+@use 'funtion' as *;
+@import 'reset';
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Noto+Sans+TC:wght@100..900&display=swap');
+
+#dashboard-nav {
+    width: 270px;
+    height: 100vh;
+    padding: 10px;
+
+    .wraper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        width: 100%;
+        height: 100%;
+        padding: 40px;
+
+        background-color: map-get($color, astronaut-main);
+        border-radius: 10px;
+
+        .top {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            gap: 20px;
+        }
+
+        .down {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            height: 100%;
+            padding-top: 20px;
+        }
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        li {
+            padding: 5px 10px;
+            border-radius: 50px;
+            color: map-get($color , white);
+            background-color: transparent;
+            transition: all 0.1s ease;
+
+            &:not(.active):hover {
+                color: map-get($color , astronaut-main);
+                background-color: map-get($color, astronaut-300);
+
+                .icon {
+                    background-color: map-get($color, astronaut-main);
+                }
+            }
+
+            &.active {
+                color: map-get($color , concrete-950);
+                background-color: map-get($color, saffron-main);
+
+                .icon {
+                    background-color: map-get($color, concrete-950);
+                }
+            }
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            @include title-m;
+            font-weight: 600;
+        }
+
+        img {
+            width: 35px;
+        }
+
+        .speedometer {
+            @include icon-mask('../images/navbar/speedometer.svg');
+        }
+
+        .home {
+            @include icon-mask('../images/navbar/home.svg');
+        }
+
+        .lease {
+            @include icon-mask('../images/navbar/lease.svg');
+        }
+
+        .paintBrush {
+            @include icon-mask('../images/navbar/paintBrush.svg');
+        }
+
+        .moneyBag {
+            @include icon-mask('../images/navbar/moneyBag.svg');
+        }
+
+        .settings {
+            @include icon-mask('../images/navbar/settings.svg');
+        }
+
+        .logout {
+            @include icon-mask('../images/navbar/logout.svg');
+        }
+    }
+}
