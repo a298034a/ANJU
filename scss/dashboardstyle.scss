@@ -16,10 +16,17 @@ body {
     box-shadow: $shadow-black-10;
     border-radius: 10px;
     background-color: white;
+
+    h2 {
+        @include title-m;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
 }
 
 #dashboard-nav {
     width: 270px;
+    min-width: 270px;
     height: 100vh;
     padding: 10px;
 
@@ -131,19 +138,31 @@ body {
     display: flex;
 
     .container {
+        display: flex;
+        flex-wrap: wrap;
+        height: fit-content;
+
+        gap: 20px;
         padding: 20px;
+    }
+
+    .row1 {
+        height: 290px;
+        width: 450px;
+    }
+
+    .row2 {
+        height: 300px;
+        width: 685px;
+    }
+
+    .row3 {
+        height: 240px;
+        width: 685px;
     }
 }
 
 #occupancy-rate {
-    width: 390px;
-
-    h2 {
-        @include title-m;
-        font-weight: 600;
-        margin-bottom: 20px;
-    }
-
     .occupancy-rate-chart {
         display: flex;
         justify-content: space-between;
@@ -203,6 +222,312 @@ body {
     }
 }
 
+#monthly-balance {
+    display: flex;
+    flex-direction: column;
+
+    .column tbody td {
+        transform-origin: bottom;
+        animation: revealing-bars 0.5s linear forwards;
+    }
+
+    //覆寫顏色
+    tr {
+        --color-1: #F2911B;
+        --color-2: #304173;
+        --color-3: #CADCF3;
+    }
+
+    table {
+        width: 380px;
+        height: fit-content;
+
+        th {
+            color: map-get($color, concrete-300);
+            font-weight: normal;
+        }
+    }
+
+    ul {
+        display: flex;
+        align-self: flex-end;
+        gap: 40px;
+
+        margin-top: 20px;
+
+        li {
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: "";
+                top: 5px;
+                right: 40px;
+                width: 16px;
+                height: 16px;
+                border-radius: 50%;
+            }
+
+            &:nth-child(1)::before {
+                background-color: #F2911B;
+            }
+
+            &:nth-child(2)::before {
+                background-color: #304173;
+            }
+
+            &:nth-child(3)::before {
+                background-color: #CADCF3;
+            }
+        }
+    }
+}
+
+#income-trend {
+    table {
+        --color-1: #525252;
+
+        tbody {
+
+            th {
+                color: map-get($color, concrete-300);
+                font-weight: normal;
+            }
+
+            td {
+                transform: scaleX(0);
+                transform-origin: left;
+                animation: revealing-line 0.2s linear forwards;
+            }
+
+            tbody tr:nth-child(2) td {
+                animation-delay: 0.2s;
+            }
+
+            tbody tr:nth-child(3) td {
+                animation-delay: 0.4s;
+            }
+
+            tbody tr:nth-child(4) td {
+                animation-delay: 0.6s;
+            }
+
+            tbody tr:nth-child(5) td {
+                animation-delay: 0.8s;
+            }
+        }
+    }
+}
+
+#maintenance-reqs {
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: left;
+    }
+
+    tr {
+        display: table-row;
+        /* 保持 tr 的表格行顯示屬性 */
+        border-bottom: 1px solid map-get($color, concrete-950);
+        /* 將底線加在 tr 上 */
+    }
+
+    tr:last-child {
+        border-bottom: none;
+    }
+
+    .completionTime {
+        display: inline-block;
+        margin-top: 8px;
+        border-radius: 50px;
+        color: map-get($color, white);
+        padding: 2px 8px;
+
+        &.pending {
+            background-color: map-get($color, saffron-main);
+        }
+
+        &.done {
+            background-color: map-get($color, concrete-300);
+        }
+    }
+}
+
+#prop-overview {
+    display: flex;
+    flex-direction: column;
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        tr {
+            display: table-row;
+            border-bottom: 1px solid map-get($color, concrete-950);
+        }
+
+        tr:last-child {
+            border-bottom: none;
+        }
+
+        .completionTime {
+            display: inline-block;
+            margin-top: 8px;
+            border-radius: 50px;
+            color: map-get($color, white);
+            padding: 2px 8px;
+
+            &.pending {
+                background-color: map-get($color, saffron-main);
+            }
+
+            &.done {
+                background-color: map-get($color, concrete-300);
+            }
+        }
+
+        .warning {
+            color: rgb(228, 32, 32);
+        }
+    }
+
+    a {
+        align-self: flex-end;
+        width: fit-content;
+        margin-top: 10px;
+        @include btn-general(map-get($font-size-content, m), map-get($color, astronaut-main), map-get($color, astronaut-500));
+    }
+}
+
+#tenant-feedback {
+    table {
+        border-collapse: collapse;
+        width: 100%;
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        tr {
+            display: table-row;
+            border-bottom: 1px solid map-get($color, concrete-950);
+        }
+
+        tr:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .completion {
+        display: inline-block;
+        margin-top: 8px;
+        border-radius: 50px;
+        color: map-get($color, white);
+        padding: 2px 8px;
+
+        &.pending {
+            background-color: map-get($color, saffron-main);
+        }
+
+        &.done {
+            background-color: map-get($color, concrete-300);
+        }
+    }
+
+}
+
+#reno-tracking {
+
+    .progress-bar {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin: 20px;
+        margin-top: 50px;
+
+        .progress-line {
+            position: absolute;
+            top: 10px;
+            left: 0px;
+            right: 13px;
+            height: 2px;
+            background-color: #ccc;
+
+            z-index: 1;
+        }
+
+        .node {
+            position: relative;
+            text-align: center;
+            z-index: 2;
+
+            .circle {
+                width: 20px;
+                height: 20px;
+                background-color: #ccc;
+                border-radius: 50%;
+                margin-bottom: 10px;
+            }
+
+            &.completed .circle {
+                background-color: map-get($color, carrot-main);
+                /* 已完成節點的顏色 */
+            }
+
+            &.current .circle {
+                position: relative;
+                width: 24px;
+                height: 24px;
+                background-color: map-get($color, white);
+                border: 2px solid #ff9800;
+                border-radius: 50%;
+
+                .inner-circle {
+                    position: absolute;
+                    top: 3px;
+                    left: 3px;
+                    width: 14px;
+                    height: 14px;
+                    background-color: map-get($color, carrot-main);
+                    border-radius: 50%;
+                }
+            }
+
+            .label {
+                display: block;
+                position: absolute;
+                margin-top: 5px;
+                margin-left: -25px;
+                width: 80px;
+            }
+        }
+    }
+
+    a {
+        top: 28px;
+        left: 530px;
+        width: fit-content;
+        @include btn-general(map-get($font-size-content, m), map-get($color, astronaut-main), map-get($color, astronaut-500));
+    }
+}
+
 /* 動畫：逐漸顯示圓餅圖 */
 @keyframes sector {
     from {
@@ -235,5 +560,31 @@ body {
 
     to {
         clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+    }
+}
+
+/* 動畫：長條圖延伸 */
+@keyframes revealing-bars {
+    0% {
+        transform: scaleY(0);
+    }
+
+    30% {
+        transform: scaleY(1);
+    }
+}
+
+/* 動畫：線圖延伸 */
+@keyframes revealing-line {
+    0% {
+        transform: scaleX(0);
+    }
+
+    50% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(1);
     }
 }

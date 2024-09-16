@@ -60,9 +60,16 @@ body {
   border-radius: 10px;
   background-color: white;
 }
+.card h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
 
 #dashboard-nav {
   width: 270px;
+  min-width: 270px;
   height: 100vh;
   padding: 10px;
 }
@@ -180,18 +187,25 @@ body {
   display: flex;
 }
 #dashboard-page .container {
+  display: flex;
+  flex-wrap: wrap;
+  height: fit-content;
+  gap: 20px;
   padding: 20px;
 }
+#dashboard-page .row1 {
+  height: 290px;
+  width: 450px;
+}
+#dashboard-page .row2 {
+  height: 300px;
+  width: 685px;
+}
+#dashboard-page .row3 {
+  height: 240px;
+  width: 685px;
+}
 
-#occupancy-rate {
-  width: 390px;
-}
-#occupancy-rate h2 {
-  font-size: 1.1rem;
-  font-weight: 500;
-  font-weight: 600;
-  margin-bottom: 20px;
-}
 #occupancy-rate .occupancy-rate-chart {
   display: flex;
   justify-content: space-between;
@@ -241,6 +255,311 @@ body {
   border-color: #F2C438;
 }
 
+#monthly-balance {
+  display: flex;
+  flex-direction: column;
+}
+#monthly-balance .column tbody td {
+  transform-origin: bottom;
+  animation: revealing-bars 0.5s linear forwards;
+}
+#monthly-balance tr {
+  --color-1: #F2911B;
+  --color-2: #304173;
+  --color-3: #CADCF3;
+}
+#monthly-balance table {
+  width: 380px;
+  height: fit-content;
+}
+#monthly-balance table th {
+  color: #BDBDBD;
+  font-weight: normal;
+}
+#monthly-balance ul {
+  display: flex;
+  align-self: flex-end;
+  gap: 40px;
+  margin-top: 20px;
+}
+#monthly-balance ul li {
+  position: relative;
+}
+#monthly-balance ul li::before {
+  position: absolute;
+  content: "";
+  top: 5px;
+  right: 40px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+}
+#monthly-balance ul li:nth-child(1)::before {
+  background-color: #F2911B;
+}
+#monthly-balance ul li:nth-child(2)::before {
+  background-color: #304173;
+}
+#monthly-balance ul li:nth-child(3)::before {
+  background-color: #CADCF3;
+}
+
+#income-trend table {
+  --color-1: #525252;
+}
+#income-trend table tbody th {
+  color: #BDBDBD;
+  font-weight: normal;
+}
+#income-trend table tbody td {
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: revealing-line 0.2s linear forwards;
+}
+#income-trend table tbody tbody tr:nth-child(2) td {
+  animation-delay: 0.2s;
+}
+#income-trend table tbody tbody tr:nth-child(3) td {
+  animation-delay: 0.4s;
+}
+#income-trend table tbody tbody tr:nth-child(4) td {
+  animation-delay: 0.6s;
+}
+#income-trend table tbody tbody tr:nth-child(5) td {
+  animation-delay: 0.8s;
+}
+
+#maintenance-reqs table {
+  border-collapse: collapse;
+  width: 100%;
+}
+#maintenance-reqs th,
+#maintenance-reqs td {
+  padding: 8px;
+  text-align: left;
+}
+#maintenance-reqs tr {
+  display: table-row;
+  /* 保持 tr 的表格行顯示屬性 */
+  border-bottom: 1px solid #292929;
+  /* 將底線加在 tr 上 */
+}
+#maintenance-reqs tr:last-child {
+  border-bottom: none;
+}
+#maintenance-reqs .completionTime {
+  display: inline-block;
+  margin-top: 8px;
+  border-radius: 50px;
+  color: #FDFDFD;
+  padding: 2px 8px;
+}
+#maintenance-reqs .completionTime.pending {
+  background-color: #F2C438;
+}
+#maintenance-reqs .completionTime.done {
+  background-color: #BDBDBD;
+}
+
+#prop-overview {
+  display: flex;
+  flex-direction: column;
+}
+#prop-overview table {
+  border-collapse: collapse;
+  width: 100%;
+}
+#prop-overview table th,
+#prop-overview table td {
+  padding: 8px;
+  text-align: left;
+}
+#prop-overview table tr {
+  display: table-row;
+  border-bottom: 1px solid #292929;
+}
+#prop-overview table tr:last-child {
+  border-bottom: none;
+}
+#prop-overview table .completionTime {
+  display: inline-block;
+  margin-top: 8px;
+  border-radius: 50px;
+  color: #FDFDFD;
+  padding: 2px 8px;
+}
+#prop-overview table .completionTime.pending {
+  background-color: #F2C438;
+}
+#prop-overview table .completionTime.done {
+  background-color: #BDBDBD;
+}
+#prop-overview table .warning {
+  color: rgb(228, 32, 32);
+}
+#prop-overview a {
+  align-self: flex-end;
+  width: fit-content;
+  margin-top: 10px;
+  position: relative;
+  z-index: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 99px;
+  background-color: #304173;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+  color: #FDFDFD;
+  padding: 8px 24px;
+  overflow: hidden;
+}
+#prop-overview a:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #5D89D4;
+  border-radius: 99px;
+  transition: all 0.3s ease;
+}
+#prop-overview a:hover {
+  color: #fff;
+}
+#prop-overview a:hover:after {
+  left: 0;
+  width: 100%;
+}
+#prop-overview a:active {
+  top: 2px;
+}
+
+#tenant-feedback table {
+  border-collapse: collapse;
+  width: 100%;
+}
+#tenant-feedback table th,
+#tenant-feedback table td {
+  padding: 8px;
+  text-align: left;
+}
+#tenant-feedback table tr {
+  display: table-row;
+  border-bottom: 1px solid #292929;
+}
+#tenant-feedback table tr:last-child {
+  border-bottom: none;
+}
+#tenant-feedback .completion {
+  display: inline-block;
+  margin-top: 8px;
+  border-radius: 50px;
+  color: #FDFDFD;
+  padding: 2px 8px;
+}
+#tenant-feedback .completion.pending {
+  background-color: #F2C438;
+}
+#tenant-feedback .completion.done {
+  background-color: #BDBDBD;
+}
+
+#reno-tracking .progress-bar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+  margin-top: 50px;
+}
+#reno-tracking .progress-bar .progress-line {
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  right: 13px;
+  height: 2px;
+  background-color: #ccc;
+  z-index: 1;
+}
+#reno-tracking .progress-bar .node {
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+#reno-tracking .progress-bar .node .circle {
+  width: 20px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+#reno-tracking .progress-bar .node.completed .circle {
+  background-color: #F2911B;
+  /* 已完成節點的顏色 */
+}
+#reno-tracking .progress-bar .node.current .circle {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-color: #FDFDFD;
+  border: 2px solid #ff9800;
+  border-radius: 50%;
+}
+#reno-tracking .progress-bar .node.current .circle .inner-circle {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  background-color: #F2911B;
+  border-radius: 50%;
+}
+#reno-tracking .progress-bar .node .label {
+  display: block;
+  position: absolute;
+  margin-top: 5px;
+  margin-left: -25px;
+  width: 80px;
+}
+#reno-tracking a {
+  top: 28px;
+  left: 530px;
+  width: fit-content;
+  position: relative;
+  z-index: 1;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 99px;
+  background-color: #304173;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.25);
+  color: #FDFDFD;
+  padding: 8px 24px;
+  overflow: hidden;
+}
+#reno-tracking a:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 100%;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #5D89D4;
+  border-radius: 99px;
+  transition: all 0.3s ease;
+}
+#reno-tracking a:hover {
+  color: #fff;
+}
+#reno-tracking a:hover:after {
+  left: 0;
+  width: 100%;
+}
+#reno-tracking a:active {
+  top: 2px;
+}
+
 /* 動畫：逐漸顯示圓餅圖 */
 @keyframes sector {
   from {
@@ -266,5 +585,26 @@ body {
   }
   to {
     clip-path: polygon(50% 50%, 0% 0%, 100% 0%, 100% 100%, 0% 100%, 0% 0%);
+  }
+}
+/* 動畫：長條圖延伸 */
+@keyframes revealing-bars {
+  0% {
+    transform: scaleY(0);
+  }
+  30% {
+    transform: scaleY(1);
+  }
+}
+/* 動畫：線圖延伸 */
+@keyframes revealing-line {
+  0% {
+    transform: scaleX(0);
+  }
+  50% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
   }
 }/*# sourceMappingURL=dashboardstyle.css.map */

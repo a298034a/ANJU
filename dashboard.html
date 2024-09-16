@@ -24,7 +24,7 @@
                     <div id="dashboard-page">
                         <DashBoardNav activePage="dashboard" />
                         <div className="container">
-                            <section id="occupancy-rate" className="card">
+                            <section id="occupancy-rate" className="card row1">
                                 <h2>出租率</h2>
                                 <div className="occupancy-rate-chart">
                                     <table className="charts-css pie">
@@ -44,7 +44,8 @@
                                     </ul>
                                 </div>
                             </section>
-                            <section id="monthly-balance" className="card">
+                            <section id="monthly-balance" className="card row1">
+                                <h2>每月收支</h2>
                                 <table className="charts-css column multiple show-labels show-4-secondary-axes data-spacing-10 show-primary-axis">
                                     <tbody>
                                         <tr>
@@ -79,6 +80,206 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                                <ul>
+                                    <li>淨利</li>
+                                    <li>收入</li>
+                                    <li>支出</li>
+                                </ul>
+                            </section>
+                            <section id="income-trend" className="card row1">
+                                <h2>收入變化曲線</h2>
+                                <table className="charts-css line hide-data show-labels show-primary-axis show-data-axes show-4-secondary-axes">
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1 月</th>
+                                            <td style={{ "--start": 0.0, "--end": 0.6 }}>
+                                                <span className="data">12K</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2 月</th>
+                                            <td style={{ "--start": 0.6, "--end": 0.6 }}>
+                                                <span className="data">12K</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3 月</th>
+                                            <td style={{ "--start": 0.6, "--end": 0.6 }}>
+                                                <span className="data">12K</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">4 月</th>
+                                            <td style={{ "--start": 0.6, "--end": 0.9 }}>
+                                                <span className="data">15K</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">5 月</th>
+                                            <td style={{ "--start": 0.9, "--end": 0.9 }}>
+                                                <span className="data">15K</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                            <section id="maintenance-reqs" className="card row2">
+                                <h2>近期維修請求</h2>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>回報者</th>
+                                            <th>問題</th>
+                                            <th>回報時間</th>
+                                            <th>承辦人</th>
+                                            <th>維修完成時間</th>
+                                            <th>支出</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>張淳友</td>
+                                            <td>漏水</td>
+                                            <td>2024/07/30</td>
+                                            <td>陳東惠</td>
+                                            <td className="completionTime pending">處理中</td>
+                                            <td>800</td>
+                                        </tr>
+                                        <tr>
+                                            <td>王明</td>
+                                            <td>燈泡更換</td>
+                                            <td>2024/06/09</td>
+                                            <td>陳國強</td>
+                                            <td className="completionTime done">2024/06/10</td>
+                                            <td>300</td>
+                                        </tr>
+                                        <tr>
+                                            <td>王明</td>
+                                            <td>門鎖更換</td>
+                                            <td>2024/05/20</td>
+                                            <td>陳國強</td>
+                                            <td className="completionTime done">2024/05/23</td>
+                                            <td>1,200</td>
+                                        </tr>
+                                        <tr>
+                                            <td>張淳友</td>
+                                            <td>椅子斷裂</td>
+                                            <td>2024/04/03</td>
+                                            <td>陳東惠</td>
+                                            <td className="completionTime done">2024/04/10</td>
+                                            <td>1,000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                            <section id="prop-overview" className="card row2">
+                                <h2>物業概況</h2>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>物業暱稱</th>
+                                            <th>租金繳交</th>
+                                            <th>維修狀態</th>
+                                            <th>租約到期日</th>
+                                            <th>代管合約到期日</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>老家</td>
+                                            <td>已繳交</td>
+                                            <td className="completionTime pending">1 件待處理</td>
+                                            <td>2024/12/31</td>
+                                            <td>2025/12/31</td>
+                                        </tr>
+                                        <tr>
+                                            <td>大同莊園</td>
+                                            <td className="warning">遲交 1 天</td>
+                                            <td className="completionTime done">無待處理</td>
+                                            <td>2024/06/09</td>
+                                            <td>2025/06/30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>幸福大樓</td>
+                                            <td>--------</td>
+                                            <td className="completionTime done">無待處理</td>
+                                            <td>----------</td>
+                                            <td>2026/06/30</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <a href="#">查看總覽</a>
+                            </section>
+                            <section id="tenant-feedback" className="card row3">
+                                <h2>近期租客回饋</h2>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>姓名</th>
+                                            <th>內文</th>
+                                            <th>狀態</th>
+                                            <th>回饋日期</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>張淳友</td>
+                                            <td>維修速度很快，才剛通報隔天就來修理了，而且...</td>
+                                            <td className="completion pending">未讀取</td>
+                                            <td>2024/07/30</td>
+                                        </tr>
+                                        <tr>
+                                            <td>陳玲玲</td>
+                                            <td>感謝您把房子的狀態整理得這麼好，住起來很舒...</td>
+                                            <td className="completion done">已讀取</td>
+                                            <td>2024/06/09</td>
+                                        </tr>
+                                        <tr>
+                                            <td>王明</td>
+                                            <td>希望能把冷氣換成分離式冷氣，我願意負擔一半...</td>
+                                            <td className="completion done">已回覆</td>
+                                            <td>2024/03/17</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                            <section id="reno-tracking" className="card row3">
+                                <h2>裝潢進度追蹤 - 幸福大樓</h2>
+                                <div class="progress-bar">
+                                    <div class="progress-line"></div>
+                                    <div class="node completed">
+                                        <div class="circle"></div>
+                                        <span class="label">規劃丈量</span>
+                                    </div>
+                                    <div class="node current">
+                                        <div class="circle">
+                                            <div class="inner-circle"></div>
+                                        </div>
+                                        <span class="label">設計討論</span>
+                                    </div>
+                                    <div class="node">
+                                        <div class="circle"></div>
+                                        <span class="label">簽約</span>
+                                    </div>
+                                    <div class="node">
+                                        <div class="circle">
+                                        </div>
+                                        <span class="label">3D設計</span>
+                                    </div>
+                                    <div class="node">
+                                        <div class="circle"></div>
+                                        <span class="label">裝潢工程</span>
+                                    </div>
+                                    <div class="node">
+                                        <div class="circle"></div>
+                                        <span class="label">驗收</span>
+                                    </div>
+                                    <div class="node">
+                                        <div class="circle"></div>
+                                        <span class="label">完工</span>
+                                    </div>
+                                </div>
+                                <a href="#">前往查看</a>
                             </section>
                         </div>
                     </div>
