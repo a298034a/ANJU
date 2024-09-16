@@ -20,24 +20,15 @@ body {
     h2 {
         @include title-m;
         font-weight: 600;
-        margin-bottom: 20px;
+        margin-bottom: 5px;
     }
-}
-
-.member-row {
-    display: flex;
-    justify-content: end;
-    align-items: center;
-
-    width: 100%;
-    height: 40px;
 }
 
 #dashboard-nav {
     width: 270px;
     min-width: 270px;
     height: 100vh;
-    padding: 10px;
+    padding: 10px 0 10px 10px;
 
     .wraper {
         display: flex;
@@ -143,31 +134,74 @@ body {
     }
 }
 
+#member {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+
+    width: 100%;
+    height: 40px;
+    padding-right: 22px;
+
+    .notify {
+        width: 35px;
+        height: 35px;
+        background-size: contain;
+        background-image: url(../images/navbar/notify.svg);
+        cursor: pointer;
+    }
+
+    .profile-wraper {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        cursor: pointer;
+
+        .avatar {
+            width: 35px;
+            height: 35px;
+            background-size: contain;
+            background-image: url(../images/navbar/avatar.svg);
+        }
+
+        p {
+            font-weight: 600;
+        }
+    }
+}
+
 #dashboard-page {
     display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
 
     .container {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
         height: fit-content;
 
-        gap: 18px;
-        padding: 10px 6.2%;
+        gap: 10px;
+        padding: 10px 20px;
     }
 
     .row1 {
-        height: 290px;
-        width: 450px;
+        height: 270px;
+        width: 32.1%;
+        min-width: 400px;
     }
 
     .row2 {
-        height: 300px;
-        width: 685px;
+        height: 270px;
+        width: 48.5%;
+        min-width: 650px;
     }
 
     .row3 {
-        height: 240px;
-        width: 685px;
+        height: 190px;
+        width: 48.5%;
+        min-width: 650px;
     }
 }
 
@@ -250,6 +284,7 @@ body {
     table {
         width: 380px;
         height: fit-content;
+        margin-top: 5px;
 
         th {
             color: map-get($color, concrete-300);
@@ -262,7 +297,7 @@ body {
         align-self: flex-end;
         gap: 40px;
 
-        margin-top: 20px;
+        margin-top: 10px;
 
         li {
             position: relative;
@@ -371,6 +406,7 @@ body {
 #prop-overview {
     display: flex;
     flex-direction: column;
+    padding-bottom: 10px;
 
     table {
         border-collapse: collapse;
@@ -416,7 +452,7 @@ body {
     a {
         align-self: flex-end;
         width: fit-content;
-        margin-top: 10px;
+        margin-top: 8px;
         @include btn-general(map-get($font-size-content, m), map-get($color, astronaut-main), map-get($color, astronaut-500));
     }
 }
@@ -469,7 +505,7 @@ body {
         align-items: center;
 
         margin: 20px;
-        margin-top: 50px;
+        margin-top: 15px;
 
         .progress-line {
             position: absolute;
@@ -530,8 +566,8 @@ body {
     }
 
     a {
-        top: 28px;
-        left: 530px;
+        top: 24px;
+        left: 505px;
         width: fit-content;
         @include btn-general(map-get($font-size-content, m), map-get($color, astronaut-main), map-get($color, astronaut-500));
     }
