@@ -113,31 +113,31 @@ body {
         }
 
         .speedometer {
-            @include icon-mask('../images/navbar/speedometer.svg');
+            @include icon-mask('https://a298034a.github.io/ANJU/images/navbar/speedometer.svg');
         }
 
         .home {
-            @include icon-mask('../images/navbar/home.svg');
+            @include icon-mask('https://a298034a.github.io/ANJU/images/navbar/home.svg');
         }
 
         .lease {
-            @include icon-mask('../images/navbar/lease.svg');
+            @include icon-mask('https://a298034a.github.io/ANJU/images/navbar/lease.svg');
         }
 
         .paintBrush {
-            @include icon-mask('../images/navbar/paintBrush.svg');
+            @include icon-mask('https://a298034a.github.io/ANJU/images/navbar/paintBrush.svg');
         }
 
         .moneyBag {
-            @include icon-mask('../images/navbar/moneyBag.svg');
+            @include icon-mask('https://a298034a.github.io/ANJU/images/navbar/moneyBag.svg');
         }
 
         .settings {
-            @include icon-mask('../images/navbar/settings.svg');
+            @include icon-mask('https://a298034a.github.io/ANJU/images/navbar/settings.svg');
         }
 
         .logout {
-            @include icon-mask('../images/navbar/logout.svg');
+            @include icon-mask('https://a298034a.github.io/ANJU/images/navbar/logout.svg');
         }
 
         @include laptop {

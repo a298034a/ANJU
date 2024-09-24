@@ -145,50 +145,50 @@ body {
   width: 35px;
   height: 35px;
   background-color: #FDFDFD;
-  mask: url("../images/navbar/speedometer.svg") no-repeat center/contain;
-  -webkit-mask: url("../images/navbar/speedometer.svg") no-repeat center/contain;
+  mask: url("https://a298034a.github.io/ANJU/images/navbar/speedometer.svg") no-repeat center/contain;
+  -webkit-mask: url("https://a298034a.github.io/ANJU/images/navbar/speedometer.svg") no-repeat center/contain;
 }
 #dashboard-nav ul .home {
   width: 35px;
   height: 35px;
   background-color: #FDFDFD;
-  mask: url("../images/navbar/home.svg") no-repeat center/contain;
-  -webkit-mask: url("../images/navbar/home.svg") no-repeat center/contain;
+  mask: url("https://a298034a.github.io/ANJU/images/navbar/home.svg") no-repeat center/contain;
+  -webkit-mask: url("https://a298034a.github.io/ANJU/images/navbar/home.svg") no-repeat center/contain;
 }
 #dashboard-nav ul .lease {
   width: 35px;
   height: 35px;
   background-color: #FDFDFD;
-  mask: url("../images/navbar/lease.svg") no-repeat center/contain;
-  -webkit-mask: url("../images/navbar/lease.svg") no-repeat center/contain;
+  mask: url("https://a298034a.github.io/ANJU/images/navbar/lease.svg") no-repeat center/contain;
+  -webkit-mask: url("https://a298034a.github.io/ANJU/images/navbar/lease.svg") no-repeat center/contain;
 }
 #dashboard-nav ul .paintBrush {
   width: 35px;
   height: 35px;
   background-color: #FDFDFD;
-  mask: url("../images/navbar/paintBrush.svg") no-repeat center/contain;
-  -webkit-mask: url("../images/navbar/paintBrush.svg") no-repeat center/contain;
+  mask: url("https://a298034a.github.io/ANJU/images/navbar/paintBrush.svg") no-repeat center/contain;
+  -webkit-mask: url("https://a298034a.github.io/ANJU/images/navbar/paintBrush.svg") no-repeat center/contain;
 }
 #dashboard-nav ul .moneyBag {
   width: 35px;
   height: 35px;
   background-color: #FDFDFD;
-  mask: url("../images/navbar/moneyBag.svg") no-repeat center/contain;
-  -webkit-mask: url("../images/navbar/moneyBag.svg") no-repeat center/contain;
+  mask: url("https://a298034a.github.io/ANJU/images/navbar/moneyBag.svg") no-repeat center/contain;
+  -webkit-mask: url("https://a298034a.github.io/ANJU/images/navbar/moneyBag.svg") no-repeat center/contain;
 }
 #dashboard-nav ul .settings {
   width: 35px;
   height: 35px;
   background-color: #FDFDFD;
-  mask: url("../images/navbar/settings.svg") no-repeat center/contain;
-  -webkit-mask: url("../images/navbar/settings.svg") no-repeat center/contain;
+  mask: url("https://a298034a.github.io/ANJU/images/navbar/settings.svg") no-repeat center/contain;
+  -webkit-mask: url("https://a298034a.github.io/ANJU/images/navbar/settings.svg") no-repeat center/contain;
 }
 #dashboard-nav ul .logout {
   width: 35px;
   height: 35px;
   background-color: #FDFDFD;
-  mask: url("../images/navbar/logout.svg") no-repeat center/contain;
-  -webkit-mask: url("../images/navbar/logout.svg") no-repeat center/contain;
+  mask: url("https://a298034a.github.io/ANJU/images/navbar/logout.svg") no-repeat center/contain;
+  -webkit-mask: url("https://a298034a.github.io/ANJU/images/navbar/logout.svg") no-repeat center/contain;
 }
 @media (max-width: 1440px) {
   #dashboard-nav ul li {
