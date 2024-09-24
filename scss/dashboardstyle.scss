@@ -58,6 +58,14 @@ body {
             height: 100%;
             padding-top: 20px;
         }
+
+        @include laptop {
+            padding: 5px;
+
+            .top {
+                display: none;
+            }
+        }
     }
 
     ul {
@@ -131,6 +139,21 @@ body {
         .logout {
             @include icon-mask('../images/navbar/logout.svg');
         }
+
+        @include laptop {
+            li {
+                padding: 0 3px;
+            }
+
+            span {
+                display: none;
+            }
+        }
+    }
+
+    @include laptop {
+        width: 50px;
+        min-width: 50px;
     }
 }
 
@@ -203,6 +226,16 @@ body {
         height: 190px;
         width: 48.5%;
         min-width: 650px;
+    }
+
+    @include laptop {
+        .container {
+            display: flex;
+            justify-content: flex-start;
+
+            gap: 10px;
+            padding: 20px 20px;
+        }
     }
 }
 

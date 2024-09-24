@@ -96,6 +96,14 @@ body {
   height: 100%;
   padding-top: 20px;
 }
+@media (max-width: 1440px) {
+  #dashboard-nav .wraper {
+    padding: 5px;
+  }
+  #dashboard-nav .wraper .top {
+    display: none;
+  }
+}
 #dashboard-nav ul {
   display: flex;
   flex-direction: column;
@@ -182,6 +190,20 @@ body {
   mask: url("../images/navbar/logout.svg") no-repeat center/contain;
   -webkit-mask: url("../images/navbar/logout.svg") no-repeat center/contain;
 }
+@media (max-width: 1440px) {
+  #dashboard-nav ul li {
+    padding: 0 3px;
+  }
+  #dashboard-nav ul span {
+    display: none;
+  }
+}
+@media (max-width: 1440px) {
+  #dashboard-nav {
+    width: 50px;
+    min-width: 50px;
+  }
+}
 
 #member {
   display: flex;
@@ -243,6 +265,14 @@ body {
   height: 190px;
   width: 48.5%;
   min-width: 650px;
+}
+@media (max-width: 1440px) {
+  #dashboard-page .container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 20px 20px;
+  }
 }
 
 #occupancy-rate .occupancy-rate-chart {
