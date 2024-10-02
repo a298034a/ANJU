@@ -486,7 +486,6 @@ body {
     a {
         align-self: flex-end;
         width: fit-content;
-        margin-top: 8px;
         @include btn-general(map-get($font-size-content, m), map-get($color, astronaut-main), map-get($color, astronaut-500));
     }
 }
@@ -531,6 +530,8 @@ body {
 }
 
 #reno-tracking {
+    display: flex;
+    flex-direction: column;    
 
     .progress-bar {
         position: relative;
@@ -592,7 +593,6 @@ body {
             .label {
                 display: block;
                 position: absolute;
-                margin-top: 5px;
                 margin-left: -25px;
                 width: 80px;
             }
@@ -600,8 +600,8 @@ body {
     }
 
     a {
-        top: 24px;
-        left: 84%;
+        align-self: flex-end;
+        margin-top: 12px;
         width: fit-content;
         @include btn-general(map-get($font-size-content, m), map-get($color, astronaut-main), map-get($color, astronaut-500));
     }

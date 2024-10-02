@@ -471,7 +471,6 @@ body {
 #prop-overview a {
   align-self: flex-end;
   width: fit-content;
-  margin-top: 8px;
   position: relative;
   z-index: 1;
   font-size: 1rem;
@@ -536,6 +535,10 @@ body {
   background-color: #BDBDBD;
 }
 
+#reno-tracking {
+  display: flex;
+  flex-direction: column;
+}
 #reno-tracking .progress-bar {
   position: relative;
   display: flex;
@@ -589,13 +592,12 @@ body {
 #reno-tracking .progress-bar .node .label {
   display: block;
   position: absolute;
-  margin-top: 5px;
   margin-left: -25px;
   width: 80px;
 }
 #reno-tracking a {
-  top: 24px;
-  left: 84%;
+  align-self: flex-end;
+  margin-top: 12px;
   width: fit-content;
   position: relative;
   z-index: 1;
