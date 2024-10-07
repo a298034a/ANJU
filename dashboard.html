@@ -12,7 +12,7 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    
+
     <script type="text/babel" src="https://a298034a.github.io/ANJU/js/DashBoardNav.jsx"></script>
 </head>
 
@@ -32,105 +32,107 @@
                                     <p>張安安</p>
                                 </div>
                             </section>
-                            <section id="occupancy-rate" className="card row1">
-                                <h2>出租率</h2>
-                                <div className="occupancy-rate-chart">
-                                    <table className="charts-css pie">
+                            <div className="row1-container">
+                                <section id="occupancy-rate" className="card row1">
+                                    <h2>出租率</h2>
+                                    <div className="occupancy-rate-chart">
+                                        <table className="charts-css pie">
+                                            <tbody>
+                                                <tr>
+                                                    <td style={{ "--start": 0, "--end": 0.3, "--color": "#F2C438" }}><span className="data">33.5%</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style={{ "--start": 0.3, "--end": 1, "--color": "#304173" }}><span className="data">66.5%</span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <ul className="charts-css legend">
+                                            <li>已出租 2 間</li>
+                                            <li>未出租 0 間</li>
+                                            <li>裝潢中 1 間</li>
+                                        </ul>
+                                    </div>
+                                </section>
+                                <section id="monthly-balance" className="card row1">
+                                    <h2>每月收支</h2>
+                                    <table className="charts-css column multiple show-labels show-4-secondary-axes data-spacing-10 show-primary-axis">
                                         <tbody>
                                             <tr>
-                                                <td style={{ "--start": 0, "--end": 0.3, "--color": "#F2C438" }}><span className="data">33.5%</span></td>
+                                                <th scope="row">1 月</th>
+                                                <td style={{ "--size": 0.6 }}></td>
+                                                <td style={{ "--size": 0.8 }}></td>
+                                                <td style={{ "--size": 0.2 }}></td>
                                             </tr>
                                             <tr>
-                                                <td style={{ "--start": 0.3, "--end": 1, "--color": "#304173" }}><span className="data">66.5%</span></td>
+                                                <th scope="row">2 月</th>
+                                                <td style={{ "--size": 0.7 }}></td>
+                                                <td style={{ "--size": 0.8 }}></td>
+                                                <td style={{ "--size": 0.1 }}></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3 月</th>
+                                                <td style={{ "--size": 0.6 }}></td>
+                                                <td style={{ "--size": 1 }}></td>
+                                                <td style={{ "--size": 0.4 }}></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">4 月</th>
+                                                <td style={{ "--size": 0.9 }}></td>
+                                                <td style={{ "--size": 1 }}></td>
+                                                <td style={{ "--size": 0.1 }}></td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">5 月</th>
+                                                <td style={{ "--size": 0.85 }}></td>
+                                                <td style={{ "--size": 1 }}></td>
+                                                <td style={{ "--size": 0.15 }}></td>
                                             </tr>
                                         </tbody>
                                     </table>
-                                    <ul className="charts-css legend">
-                                        <li>已出租 2 間</li>
-                                        <li>未出租 0 間</li>
-                                        <li>裝潢中 1 間</li>
+                                    <ul>
+                                        <li>淨利</li>
+                                        <li>收入</li>
+                                        <li>支出</li>
                                     </ul>
-                                </div>
-                            </section>
-                            <section id="monthly-balance" className="card row1">
-                                <h2>每月收支</h2>
-                                <table className="charts-css column multiple show-labels show-4-secondary-axes data-spacing-10 show-primary-axis">
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1 月</th>
-                                            <td style={{ "--size": 0.6 }}></td>
-                                            <td style={{ "--size": 0.8 }}></td>
-                                            <td style={{ "--size": 0.2 }}></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2 月</th>
-                                            <td style={{ "--size": 0.7 }}></td>
-                                            <td style={{ "--size": 0.8 }}></td>
-                                            <td style={{ "--size": 0.1 }}></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3 月</th>
-                                            <td style={{ "--size": 0.6 }}></td>
-                                            <td style={{ "--size": 1 }}></td>
-                                            <td style={{ "--size": 0.4 }}></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4 月</th>
-                                            <td style={{ "--size": 0.9 }}></td>
-                                            <td style={{ "--size": 1 }}></td>
-                                            <td style={{ "--size": 0.1 }}></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">5 月</th>
-                                            <td style={{ "--size": 0.85 }}></td>
-                                            <td style={{ "--size": 1 }}></td>
-                                            <td style={{ "--size": 0.15 }}></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                                <ul>
-                                    <li>淨利</li>
-                                    <li>收入</li>
-                                    <li>支出</li>
-                                </ul>
-                            </section>
-                            <section id="income-trend" className="card row1">
-                                <h2>收入變化曲線</h2>
-                                <table className="charts-css line hide-data show-labels show-primary-axis show-data-axes show-4-secondary-axes">
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">1 月</th>
-                                            <td style={{ "--start": 0.0, "--end": 0.6 }}>
-                                                <span className="data">12K</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">2 月</th>
-                                            <td style={{ "--start": 0.6, "--end": 0.6 }}>
-                                                <span className="data">12K</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3 月</th>
-                                            <td style={{ "--start": 0.6, "--end": 0.6 }}>
-                                                <span className="data">12K</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">4 月</th>
-                                            <td style={{ "--start": 0.6, "--end": 0.9 }}>
-                                                <span className="data">15K</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">5 月</th>
-                                            <td style={{ "--start": 0.9, "--end": 0.9 }}>
-                                                <span className="data">15K</span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </section>
+                                </section>
+                                <section id="income-trend" className="card row1">
+                                    <h2>收入變化曲線</h2>
+                                    <table className="charts-css line hide-data show-labels show-primary-axis show-data-axes show-4-secondary-axes">
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1 月</th>
+                                                <td style={{ "--start": 0.0, "--end": 0.6 }}>
+                                                    <span className="data">12K</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2 月</th>
+                                                <td style={{ "--start": 0.6, "--end": 0.6 }}>
+                                                    <span className="data">12K</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3 月</th>
+                                                <td style={{ "--start": 0.6, "--end": 0.6 }}>
+                                                    <span className="data">12K</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">4 月</th>
+                                                <td style={{ "--start": 0.6, "--end": 0.9 }}>
+                                                    <span className="data">15K</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">5 月</th>
+                                                <td style={{ "--start": 0.9, "--end": 0.9 }}>
+                                                    <span className="data">15K</span>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </section>
+                            </div>
                             <section id="maintenance-reqs" className="card row2">
                                 <h2>近期維修請求</h2>
                                 <table>
